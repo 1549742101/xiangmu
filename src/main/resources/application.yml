@@ -1,0 +1,39 @@
+#Spring Boot Config
+server:
+  #ssl:
+  #key-store: C:/Program Files/tmcssl/2894343_guilongkeji.com.cn.pfx
+  #key-store-password: m85e0eH7
+  servlet:
+    session:
+      timeout: 720
+  port: 8081
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://cdb-1lmq810s.cd.tencentcdb.com:10055/wanganbei?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
+    username: root
+    password: xgl020331
+  devtools:
+    restart:
+      enabled: true
+resources:
+  static-locations: classpath:classpath:/resources/,classpath:/templates/,classpath:/public/,classpath:/static/
+
+#MyBatis
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*/*Mapper.xml
+  typeAliasesPackage: com.example.app.entity
+  global-config:
+    id-type: 0
+    field-strategy: 2
+    db-column-underline: true
+    refresh-mapper: true
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+
+#logging
+logging:
+  file:
+    path: C:\app\log
