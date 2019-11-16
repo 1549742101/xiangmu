@@ -12,35 +12,11 @@ public class User {
     private String id;//id号
     private String username;//姓名
     private String password;//密码
-    private String sno;//学号
+    private int sno;//学号
     private String col;//学院
     private String keyword;//时间戳
     private String regtime;//注册时间
-    private String betime;//最后一次登录时间
-
-    public String getKeyword() {
-        return keyword;
-    }
-
-    public void setKeyword(String keyword) {
-        this.keyword = keyword;
-    }
-
-    public String getRegtime() {
-        return regtime;
-    }
-
-    public void setRegtime(String regtime) {
-        this.regtime = regtime;
-    }
-
-    public String getBetime() {
-        return betime;
-    }
-
-    public void setBetime(String betime) {
-        this.betime = betime;
-    }
+    private String endtime;//最后一次登录时间
 
     public void setId(String id) {
         this.id = id;
@@ -54,12 +30,24 @@ public class User {
         this.password = password;
     }
 
-    public void setSno(String sno) {
+    public void setSno(int sno) {
         this.sno = sno;
     }
 
     public void setCol(String col) {
         this.col = col;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+
+    public void setRegtime(String regtime) {
+        this.regtime = regtime;
+    }
+
+    public void setEndtime(String endtime) {
+        this.endtime = endtime;
     }
 
     public String getId() {
@@ -74,11 +62,24 @@ public class User {
         return password;
     }
 
-    public String getSno() {
+    public int getSno() {
         return sno;
     }
 
     public String getCol() {
         return col;
     }
+
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public String getRegtime() {
+        return regtime;
+    }
+
+    public String getEndtime() {
+        return endtime;
+    }
+
 }
