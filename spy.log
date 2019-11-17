@@ -21,3 +21,17 @@
 1574004268529|21|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
 1574004361275|19|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
 1574004366617|11|statement|connection 0|SELECT id,username,password,sex,sno,phone,col,keyword,regtime,endtime FROM         user|SELECT id,username,password,sex,sno,phone,col,keyword,regtime,endtime FROM         user
+1574004912362|10|statement|connection 1|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574004942626|10|statement|connection 2|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574007451818|28|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574007532497|10|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574007532555|33|statement|connection 0|SELECT id,username,password,sex,sno,phone,col,keyword,regtime,endtime FROM         user|SELECT id,username,password,sex,sno,phone,col,keyword,regtime,endtime FROM         user
+1574007553786|10|statement|connection 1|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574007566796|11|statement|connection 1|SELECT id,username,password,sex,sno,phone,col,keyword,regtime,endtime FROM         user|SELECT id,username,password,sex,sno,phone,col,keyword,regtime,endtime FROM         user
+1574008826378|34|statement|connection 1|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574008826471|10|statement|connection 2|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574008826504|11|statement|connection 2|SELECT id,username,password,sex,sno,phone,col,keyword,regtime,endtime FROM         user|SELECT id,username,password,sex,sno,phone,col,keyword,regtime,endtime FROM         user
+1574008977499|26|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574009036474|24|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574009112157|28|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574009162259|11|statement|connection 0|SELECT id,username,password,sex,sno,phone,col,keyword,regtime,endtime FROM         user|SELECT id,username,password,sex,sno,phone,col,keyword,regtime,endtime FROM         user

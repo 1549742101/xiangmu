@@ -5,6 +5,17 @@
     <title>Title</title>
 </head>
 <body>
+<h1>个人信息</h1>
+<!--//id;username;password;sex;sno;phone;col;keyword;regtime;endtime;-->
+账号id：<p th:text="${user.id}"></p>
+账号名：<p th:text="${user.username}"></p>
+密码：<p th:text="${user.password}"></p>
+性别：<p th:text="${user.sex}==0?'女':'男'"></p>
+手机号：<p th:text="${user.phone}"></p>
+学院：<p th:text="${user.col}=='IT'?'软件学院':'其他学院'"></p>
+keyword：<p th:text="${user.keyword}"></p>
+注册时间：<p th:text="${user.regtime}"></p>
+上次登录时间：<p th:text="${user.endtime}"></p>
 hello world
 </body>
 </html>

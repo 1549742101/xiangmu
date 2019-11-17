@@ -8,6 +8,7 @@ package com.example.app.entity;
  * Time: 21:47
  * To change this template use File | Settings | File Templates.
  **/
+//id;username;password;sex;sno;phone;col;keyword;regtime;endtime;
 public class User {
     private String id;//id号
     private String username;//姓名
