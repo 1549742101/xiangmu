@@ -12,7 +12,9 @@ public class User {
     private String id;//id号
     private String username;//姓名
     private String password;//密码
+    private int sex;//性别
     private int sno;//学号
+    private String phone;//电话号
     private String col;//学院
     private String keyword;//时间戳
     private String regtime;//注册时间
@@ -30,8 +32,16 @@ public class User {
         this.password = password;
     }
 
+    public void setSex(int sex) {
+        this.sex = sex;
+    }
+
     public void setSno(int sno) {
         this.sno = sno;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public void setCol(String col) {
@@ -62,8 +72,16 @@ public class User {
         return password;
     }
 
+    public int getSex() {
+        return sex;
+    }
+
     public int getSno() {
         return sno;
+    }
+
+    public String getPhone() {
+        return phone;
     }
 
     public String getCol() {

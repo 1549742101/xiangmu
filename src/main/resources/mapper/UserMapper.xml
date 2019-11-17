@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!--
-namespace：命名空间，其值为某一个dao层类的具体路径
--->
+
 <mapper namespace="com.example.app.mapper.UserMapper">
-    <sql id="user1">
-        id,username,password,sno,cno,keyword,regtime,betime
-    </sql>
-    <select id="login" parameterType="String" resultType="com.example.app.entity.User">
-        select <include refid="user1"></include>
-        from user where username = ${username} and password = ${password}
+    <select id="login" parameterType="String" resultMap="loginByName">
+        SELECT id,username,password,sex,sno,phone,col,keyword,regtime,endtime FROM
+        user
+    </select>
+
+
+    <resultMap id="loginByName" type="com.example.app.entity.User">
+        <id property="id" column="id"></id>
+        <result property="username" column="username"></result>
+        <result property="password" column="password"></result>
+        <result property="sex" column="sex"></result>
+        <result property="sno" column="sno"></result>
+        <result property="phone" column="phone"></result>
+        <result property="col" column="col"></result>
+        <result property="keyword" column="keyword"></result>
+        <result property="regtime" column="regtime"></result>
+        <result property="endtime" column="endtime"></result>
+    </resultMap>
+    <select id="login1" resultType="com.example.app.entity.User">
+        select 1
     </select>
 </mapper>
