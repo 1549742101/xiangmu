@@ -23,6 +23,12 @@ public class UserServiceImpl implements UserService {
         return 0;
     }
 
+    /**
+     * 账号密码登录
+     * @param username
+     * @param password
+     * @return
+     */
     @Override
     public User login(String username, String password) {
         User user;
@@ -37,8 +43,23 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
+    /**
+     * 学号密码登录
+     * @param sno
+     * @param password
+     * @return
+     */
     @Override
     public User login1(int sno, String password) {
+        User user;
+        user=userMapper.login1(sno);
+        if (user==null){
+            return null;
+        }
+        MD5 md5 = new MD5();
+        if (md5.loginByPass(password,user.getKeyword(),user.getPassword())){
+            return user;
+        }
         return null;
     }
 

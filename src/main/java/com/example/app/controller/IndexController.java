@@ -1,8 +1,9 @@
-package com.example.app.control;
+package com.example.app.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created by IntelliJ IDEA.
@@ -12,9 +13,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * To change this template use File | Settings | File Templates.
  **/
 @Controller
-public class indexControl {
+public class IndexController {
+    /**
+     * 日志文件
+     */
+    private static Logger log = LoggerFactory.getLogger(LoginController.class);
     @RequestMapping("index")
     public String index(){
-        return "index.html";
+        return "index";
     }
 }

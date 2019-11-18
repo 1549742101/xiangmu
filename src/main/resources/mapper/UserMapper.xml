@@ -24,4 +24,7 @@
     <select id="login1" resultType="com.example.app.entity.User">
         select 1
     </select>
+    <insert id="register">
+
+    </insert>
 </mapper>

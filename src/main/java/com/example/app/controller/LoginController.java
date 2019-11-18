@@ -1,4 +1,4 @@
-package com.example.app.control;
+package com.example.app.controller;
 
 import com.example.app.entity.User;
 import com.example.app.service.UserService;
@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created by IntelliJ IDEA.
@@ -19,14 +18,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * To change this template use File | Settings | File Templates.
  **/
 @Controller
-public class LoginControler {
-    private static Logger log = LoggerFactory.getLogger(LoginControler.class);
+public class LoginController {
+    /**
+     * 日志文件
+     */
+    private static Logger log = LoggerFactory.getLogger(LoginController.class);
     @Autowired
     private UserService userService;
-    @RequestMapping({"login"})
-    public String login1(){
-        return "login";
-    }
+
 
     @RequestMapping(value = {"login1"},method = RequestMethod.POST)
     public String login(String username, String password, String code, Model model){

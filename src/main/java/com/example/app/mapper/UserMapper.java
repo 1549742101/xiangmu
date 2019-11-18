@@ -12,6 +12,7 @@ import org.apache.ibatis.annotations.Mapper;
  **/
 @Mapper
 public interface UserMapper {
+    int register(User user);
     User login(String username);
     User login1(int sno);
 }
