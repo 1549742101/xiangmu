@@ -35,3 +35,110 @@
 1574009036474|24|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
 1574009112157|28|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
 1574009162259|11|statement|connection 0|SELECT id,username,password,sex,sno,phone,col,keyword,regtime,endtime FROM         user|SELECT id,username,password,sex,sno,phone,col,keyword,regtime,endtime FROM         user
+1574044029110|28|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574066676416|14|statement|connection 1|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574066716096|38|statement|connection 2|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574066728096|25|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574066953923|13|statement|connection 2|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574066953969|12|statement|connection 2|select * from col|select * from col
+1574069416418|22|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574246220888|26|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574246286243|23|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574246302479|71|statement|connection 0|select * from col|select * from col
+1574249600308|63|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574250472879|171|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574250472980|60|statement|connection 0|select * from col|select * from col
+1574250488237|124|statement|connection 0|select * from col|select * from col
+1574250703034|58|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574250703062|27|statement|connection 0|select * from col|select * from col
+1574256033013|10|statement|connection 1|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574256051564|12|statement|connection 1|select * from col|select * from col
+1574256115916|11|statement|connection 1|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574256115928|10|statement|connection 1|select * from col|select * from col
+1574256134224|8|statement|connection 2|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574256156089|10|statement|connection 2|select * from col|select * from col
+1574256569412|21|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574256573969|10|statement|connection 0|select * from col|select * from col
+1574256622973|10|statement|connection 0|select * from col|select * from col
+1574256699621|9|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574256699631|9|statement|connection 0|select * from col|select * from col
+1574256720904|10|statement|connection 0|select * from col|select * from col
+1574256797619|9|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574256797628|9|statement|connection 0|select * from col|select * from col
+1574256917854|9|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574256917865|9|statement|connection 0|select * from col|select * from col
+1574256968514|10|statement|connection 0|select * from col|select * from col
+1574438578075|24|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574442958713|25|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574443088374|25|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574443472724|27|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574443639465|10|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574443639504|10|statement|connection 0|select * from col|select * from col
+1574443656734|9|statement|connection 0|select * from col|select * from col
+1574443735408|26|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574443759448|12|statement|connection 0|select * from col|select * from col
+1574443895534|22|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574443928648|10|statement|connection 0|select * from col|select * from col
+1574448122095|33|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574448170667|54|statement|connection 0|select count(*) from user where                           username =  or|select count(*) from user where                           username =  or
+1574448239126|8|statement|connection 1|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574448252125|9|statement|connection 1|select count(*) from user where                           username =|select count(*) from user where                           username =
+1574448562420|26|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574448569749|32|statement|connection 0|select count(*) from user where                           username =|select count(*) from user where                           username =
+1574448708294|10|statement|connection 1|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574448718026|10|statement|connection 1|select count(*) from user where                           username=|select count(*) from user where                           username=
+1574448754806|24|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574448767310|29|statement|connection 0|select count(*) from user where                           username=|select count(*) from user where                           username=
+1574448855574|9|statement|connection 1|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574448857079|10|statement|connection 1|select count(*) from user where                           username=''|select count(*) from user where                           username=''
+1574448857109|9|statement|connection 1|select count(*) from user where                           1=2|select count(*) from user where                           1=2
+1574448857122|9|statement|connection 1|select count(*) from user where                           phone='12345678910'|select count(*) from user where                           phone='12345678910'
+1574448911365|9|statement|connection 1|select count(*) from user where                           username=''|select count(*) from user where                           username=''
+1574448911377|9|statement|connection 1|select count(*) from user where                           sno=179000316|select count(*) from user where                           sno=179000316
+1574448911388|9|statement|connection 1|select count(*) from user where                           phone='12345678910'|select count(*) from user where                           phone='12345678910'
+1574451834529|26|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574451841354|11|statement|connection 0|select * from col|select * from col
+1574452052141|10|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574452052152|10|statement|connection 0|select * from col|select * from col
+1574452077397|10|statement|connection 0|select * from col|select * from col
+1574452078924|10|statement|connection 0|select * from col|select * from col
+1574452079858|10|statement|connection 0|select * from col|select * from col
+1574452112382|10|statement|connection 0|select * from col|select * from col
+1574452176447|11|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574452176458|10|statement|connection 0|select * from col|select * from col
+1574452186963|10|statement|connection 0|select count(*) from user where                           username='1549742101@qq.com'|select count(*) from user where                           username='1549742101@qq.com'
+1574452186980|10|statement|connection 0|select count(*) from user where                           sno=179000316|select count(*) from user where                           sno=179000316
+1574452186993|10|statement|connection 0|select count(*) from user where                           phone='17353165259'|select count(*) from user where                           phone='17353165259'
+1574452238974|10|statement|connection 0|select count(*) from user where                           username='1549742101@qq.com'|select count(*) from user where                           username='1549742101@qq.com'
+1574452238987|10|statement|connection 0|select count(*) from user where                           sno=179000317|select count(*) from user where                           sno=179000317
+1574452238998|10|statement|connection 0|select count(*) from user where                           phone='17353165259'|select count(*) from user where                           phone='17353165259'
+1574452301292|10|statement|connection 1|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574452313008|10|statement|connection 1|select count(*) from user where                           username='1549742101@qq.com'|select count(*) from user where                           username='1549742101@qq.com'
+1574452313021|9|statement|connection 1|select count(*) from user where                           sno=179000317|select count(*) from user where                           sno=179000317
+1574452313034|10|statement|connection 1|select count(*) from user where                           phone='17353165259'|select count(*) from user where                           phone='17353165259'
+1574452330337|10|statement|connection 1|select count(*) from user where                           username='1549742101@qq.com'|select count(*) from user where                           username='1549742101@qq.com'
+1574452330348|9|statement|connection 1|select count(*) from user where                           sno=179000317|select count(*) from user where                           sno=179000317
+1574452330361|9|statement|connection 1|select count(*) from user where                           phone='17353165259'|select count(*) from user where                           phone='17353165259'
+1574452348785|10|statement|connection 1|select count(*) from user where                           username='1549742101@qq.com'|select count(*) from user where                           username='1549742101@qq.com'
+1574452348796|9|statement|connection 1|select count(*) from user where                           sno=179000316|select count(*) from user where                           sno=179000316
+1574452348808|10|statement|connection 1|select count(*) from user where                           phone='17353165259'|select count(*) from user where                           phone='17353165259'
+1574452361945|10|statement|connection 1|select count(*) from user where                           username='1549742101@qq.com'|select count(*) from user where                           username='1549742101@qq.com'
+1574452361957|10|statement|connection 1|select count(*) from user where                           sno=179000317|select count(*) from user where                           sno=179000317
+1574452361969|10|statement|connection 1|select count(*) from user where                           phone=''|select count(*) from user where                           phone=''
+1574452372205|9|statement|connection 1|select count(*) from user where                           username='1549742101@qq.com'|select count(*) from user where                           username='1549742101@qq.com'
+1574452372216|10|statement|connection 1|select count(*) from user where                           sno=179000317|select count(*) from user where                           sno=179000317
+1574452372227|9|statement|connection 1|select count(*) from user where                           phone='17353165259'|select count(*) from user where                           phone='17353165259'
+1574452391950|10|statement|connection 1|select count(*) from user where                           username='1549742101@qq.com'|select count(*) from user where                           username='1549742101@qq.com'
+1574452391963|10|statement|connection 1|select count(*) from user where                           sno=179000317|select count(*) from user where                           sno=179000317
+1574452391974|9|statement|connection 1|select count(*) from user where                           phone=''|select count(*) from user where                           phone=''
+1574452401993|9|statement|connection 1|select count(*) from user where                           username='1549742101@qq.com'|select count(*) from user where                           username='1549742101@qq.com'
+1574452402004|9|statement|connection 1|select count(*) from user where                           sno=179000317|select count(*) from user where                           sno=179000317
+1574452402016|10|statement|connection 1|select count(*) from user where                           phone='17353165259'|select count(*) from user where                           phone='17353165259'
+1574452517364|10|statement|connection 1|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1574452517375|9|statement|connection 1|select count(*) from user where                           username='1549742101@qq.com'|select count(*) from user where                           username='1549742101@qq.com'
+1574452517386|10|statement|connection 1|select count(*) from user where                           sno=179000317|select count(*) from user where                           sno=179000317
+1574452517398|10|statement|connection 1|select count(*) from user where                           phone='17353165259'|select count(*) from user where                           phone='17353165259'
+1574452524099|9|statement|connection 1|select count(*) from user where                           username='1549742101@qq.com'|select count(*) from user where                           username='1549742101@qq.com'
+1574452524110|9|statement|connection 1|select count(*) from user where                           sno=179000317|select count(*) from user where                           sno=179000317
+1574452524121|9|statement|connection 1|select count(*) from user where                           phone=''|select count(*) from user where                           phone=''
+1574452755521|26|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL

@@ -1,7 +1,10 @@
 package com.example.app.service;
 
+import com.example.app.entity.Colleage;
 import com.example.app.entity.User;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -14,4 +17,7 @@ public interface UserService {
     public int registerUser(User user);
     public User login(String username,String password);
     public User login1(int sno,String password);
+    public List<Colleage> All_Colleage();
+    public boolean hasUser(User user);
+    public boolean hasCol(int col_id);
 }
