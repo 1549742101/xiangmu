@@ -1,5 +1,6 @@
 package com.example.app.controller;
 
+import com.example.app.entity.LoginUser;
 import com.example.app.entity.User;
 import com.example.app.service.UserService;
 import org.slf4j.Logger;
@@ -7,8 +8,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import javax.validation.Valid;
 
 /**
  * Created by IntelliJ IDEA.
@@ -28,37 +32,21 @@ public class LoginController {
 
 
     @RequestMapping(value = {"login1"},method = RequestMethod.POST)
-    public String login(String username, String password, String code, Model model){
-        if(username.length()<6||username.length()>20){
-            return "login?msg=0003";
+    public String login(@Valid LoginUser user, BindingResult bindingResult, Model model){
+        if (bindingResult.hasErrors()){
+            return "login";
         }
-        User user;
-        int sno=-1;
-        user = userService.login(username,password);
-        if (user==null&&username.length()==9){
-            try {
-                sno = Integer.parseInt(username);
-            }catch (NumberFormatException e){
-                log.error(e.getMessage());
-            }
-            if (sno==-1){
-                return "login?msg=0002";
-            }else {
-                user = userService.login1(sno,password);
-                if (user==null){
-                    return "login?msg=0001";
-                }
-            }
+        User users = new User();
+        users.setUsername(user.getUsername());
+        try {
+            users.setSno(Integer.parseInt(user.getUsername()));
+        }catch (NumberFormatException e){
+
         }
-        model.addAttribute("user",user);
+        users.setPhone(user.getUsername());
+        users.setPassword(user.getPassword());
+        model.addAttribute("users",user);
+        model.addAttribute("user",userService.login(users));
         return "index";
     }
-
-    /*public static void main(String[] args) {
-        try {
-            int uuu=Integer.parseInt("aaa111");
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }*/
 }

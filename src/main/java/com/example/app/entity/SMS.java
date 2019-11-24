@@ -1,12 +1,15 @@
 package com.example.app.entity;
 
 import com.example.app.config.TencentSMSConfig;
+import com.example.app.controller.LoginController;
 import com.github.qcloudsms.SmsMultiSender;
 import com.github.qcloudsms.SmsMultiSenderResult;
 import com.github.qcloudsms.SmsSingleSender;
 import com.github.qcloudsms.SmsSingleSenderResult;
 import com.github.qcloudsms.httpclient.HTTPException;
 import org.json.JSONException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
@@ -18,9 +21,11 @@ import java.io.IOException;
  * To change this template use File | Settings | File Templates.
  **/
 public class SMS {
+    /**
+     * 日志文件
+     */
+    private static Logger log = LoggerFactory.getLogger(LoginController.class);
     private String phone;
-
-
     private String[] phones;
     private Code code;
     private TencentSMSConfig config;
@@ -56,24 +61,22 @@ public class SMS {
                     "【"+config.getSmsSign()+"】"+params+"为你本次注册的验证码，如果非本人注册，请忽略此验证码", "", "");*/
             SmsMultiSenderResult result  = ssender.sendWithParam("86", config.getPhoneNumbers(),
                     config.getTemplateId(), params, config.getSmsSign(), "", "");
-            System.out.println(result);
+            log.info(result.toString());
             return true;
         } catch (HTTPException e) {
             // HTTP 响应码错误
-            e.printStackTrace();
+            log.error(e.getMessage());
         } catch (JSONException e) {
             // JSON 解析错误
-            e.printStackTrace();
+            log.error(e.getMessage());
         } catch (IOException e) {
             // 网络 IO 错误
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return false;
     }
 
-    public static void main(String[] args) {
-        for (int i = 1; i <1000 ; i++) {
-            System.out.println(i);
-        }
+    public String toString(){
+        return this.phone+";"+this.phones.toString()+";"+this.getCode().getKey();
     }
 }

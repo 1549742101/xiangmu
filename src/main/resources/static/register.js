@@ -11,13 +11,6 @@
     }
     $(".sms").click(
         function () {
-            $(".phone").click(function () {
-                $(".phomsg").addClass("hide");
-            });
-            if (this.form.phone.value.length!=11){
-                $(".phomsg").removeClass("hide")
-                return;
-            }
             $.post(
                 "code",
                 {
@@ -30,10 +23,12 @@
                             if (time!=0){
                                 $(".sms").html(time+"s")
                                 time--;
+                                $(".phone").addClass("disabled")
                                 $(".sms").addClass("disabled");
                             }else {
                                 time = 60;
                                 $(".sms").html("重新发送")
+                                $(".remove").addClass("disabled")
                                 $(".sms").removeClass("disabled");
                                 return
                             }
@@ -42,6 +37,8 @@
                             },1000);
                         }
                         timerdown();
+                    }else {
+                        alert(data);
                     }
                 }
             )

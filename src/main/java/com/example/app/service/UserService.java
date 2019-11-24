@@ -1,8 +1,10 @@
 package com.example.app.service;
 
+
 import com.example.app.entity.Colleage;
+import com.example.app.entity.LoginUser;
+import com.example.app.entity.SMS;
 import com.example.app.entity.User;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -15,9 +17,10 @@ import java.util.List;
  **/
 public interface UserService {
     public int registerUser(User user);
-    public User login(String username,String password);
-    public User login1(int sno,String password);
+    public User login(User user);
     public List<Colleage> All_Colleage();
     public boolean hasUser(User user);
     public boolean hasCol(int col_id);
+    public boolean registerCode(SMS sms);
+    public boolean getCode(Integer code);
 }

@@ -25,7 +25,7 @@ public class User {
     @Length(min = 5,max = 20,message = "账号名必须在5-18位之间")
     @hasUserByUserName
     private String username;//姓名
-    @Length(min = 6,max = 40,message = "密码长度必须在6-20之间")
+    @Length(min = 6,max = 20,message = "密码长度必须在6-20之间")
     private String password;//密码
     private String passwords;//密码
     @Range(min = 0,max = 1,message = "请选择性别")
@@ -43,7 +43,7 @@ public class User {
     private Date regtime;//注册时间
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date endtime;//最后一次登录时间
-    @Range(min = 100000, max = 999999, message = "请输入正确的验证码")
+    @registerCode
     private int code;
     @AssertTrue(message = "两次输入密码不一致")
     public boolean isSamePassword(){

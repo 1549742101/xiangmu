@@ -9,6 +9,7 @@ import java.util.Random;
  * Time: 0:53
  * To change this template use File | Settings | File Templates.
  **/
+
 public class Code {
     private int key;
 

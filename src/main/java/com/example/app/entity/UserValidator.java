@@ -51,6 +51,31 @@ import java.lang.annotation.Target;
     Class<?>[] groups() default { };
     Class<? extends Payload>[] payload() default { };
 }
+@Target({ ElementType.FIELD})
+@Retention(RetentionPolicy.RUNTIME)
+@Constraint(validatedBy = registerCodes.class)
+@interface registerCode{
+    String message() default "验证码错误";
+    Class<?>[] groups() default { };
+    Class<? extends Payload>[] payload() default { };
+}
+@Target({ ElementType.FIELD})
+@Retention(RetentionPolicy.RUNTIME)
+@Constraint(validatedBy = NotHasUsers.class)
+@interface NotHasUser{
+    String message() default "该用户尚未注册";
+    Class<?>[] groups() default { };
+    Class<? extends Payload>[] payload() default { };
+}
+@Target({ ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Constraint(validatedBy = NotLogins.class)
+@interface NotLogin{
+    String message() default "密码错误";
+    Class<?>[] groups() default { };
+    Class<? extends Payload>[] payload() default { };
+}
+
 class hasUserByUserNames implements ConstraintValidator<hasUserByUserName,String> {
     @Autowired
     private UserService userService;
@@ -58,7 +83,6 @@ class hasUserByUserNames implements ConstraintValidator<hasUserByUserName,String
     @Override
     public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) {
         user.setUsername(s);
-
         return !userService.hasUser(user);
     }
 }
@@ -85,9 +109,49 @@ class hasUserByPhones implements ConstraintValidator<hasUserByPhone,String> {
 class hasCols implements ConstraintValidator<hasCol,Integer> {
     @Autowired
     private UserService userService;
-    User user = new User();
     @Override
     public boolean isValid(Integer s, ConstraintValidatorContext constraintValidatorContext) {
         return !userService.hasCol(s);
+    }
+}
+class registerCodes implements ConstraintValidator<registerCode,Integer> {
+    @Autowired
+    private UserService userService;
+    @Override
+    public boolean isValid(Integer s, ConstraintValidatorContext constraintValidatorContext) {
+        return userService.getCode(s);
+    }
+}
+class NotHasUsers implements ConstraintValidator<NotHasUser,String> {
+    @Autowired
+    private UserService userService;
+    User user=new User();
+    @Override
+    public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) {
+        user.setUsername(s);
+        try {
+            user.setSno(Integer.parseInt(s));
+        }catch (NumberFormatException e){
+
+        }
+        user.setPhone(s);
+        return userService.hasUser(user);
+    }
+}
+class NotLogins implements ConstraintValidator<NotLogin,LoginUser> {
+    @Autowired
+    private UserService userService;
+    User user=new User();
+    @Override
+    public boolean isValid(LoginUser s, ConstraintValidatorContext constraintValidatorContext) {
+        user.setUsername(s.getUsername());
+        try {
+            user.setSno(Integer.parseInt(s.getUsername()));
+        }catch (NumberFormatException e){
+
+        }
+        user.setPhone(s.getUsername());
+        user.setPassword(s.getPassword());
+        return userService.login(user)==null?true:false;
     }
 }

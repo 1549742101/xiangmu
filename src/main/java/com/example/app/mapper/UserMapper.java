@@ -1,8 +1,11 @@
 package com.example.app.mapper;
 
+import com.example.app.entity.Code;
 import com.example.app.entity.Colleage;
+import com.example.app.entity.SMS;
 import com.example.app.entity.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -17,10 +20,11 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
     int register(User user);
-    User login(String username);
-    User login1(int sno);
+    User login(User user);
     @Select("select * from col")
     List<Colleage> All_Colleage();
     int hasUser(User user);
     int hasCol(int col_id);
+    int registerCode(SMS sms);
+    int getCode(@Param("code") Integer code);
 }

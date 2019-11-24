@@ -3,36 +3,49 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.app.mapper.UserMapper">
+    <insert id="registerCode" parameterType="com.example.app.entity.SMS">
+        insert into code (code.phone,code.code,code.time)
+        values ('${phone}',${code.getKey()},NOW());
+    </insert>
+    <select id="getCode" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+        select count(*) from code where code.code = ${code};
+    </select>
     <select id="hasCol" parameterType="int" resultType="java.lang.Integer">
         select count(*) from where col_id = ${col_id}
     </select>
     <select id="hasUser" resultType="int" parameterType="com.example.app.entity.User">
         select count(*) from user where
-        <choose>
-            <when test="username!=null">
-                username='${username}'
-            </when>
-            <when test="sno!=null">
-                sno=${sno}
-            </when>
-            <when test="phone!=null">
-                phone='${phone}'
-            </when>
-            <otherwise>
-                1=2
-            </otherwise>
-        </choose>
+        <if test="username!=null">
+            username='${username}' or
+        </if>
+        <if test="sno!=null">
+            sno=${sno} or
+        </if>
+        <if test="phone!=null">
+            phone='${phone}' or
+        </if>
+        1=2
     </select>
-    <select id="login" parameterType="String" resultMap="loginByName">
-        SELECT id,username,password,sex,sno,phone,col,keyword,regtime,endtime FROM
-        user
+    <select id="login" parameterType="com.example.app.entity.User" resultMap="loginUser">
+        SELECT id,username,password,sex,sno,phone,col_id,keyword,regtime,endtime FROM
+        user where
+        <if test="username!=null">
+            username='${username}' or
+        </if>
+        <if test="sno!=null">
+            sno=${sno} or
+        </if>
+        <if test="phone!=null">
+            phone='${phone}' or
+        </if>
+        1=2
     </select>
 
 
-    <resultMap id="loginByName" type="com.example.app.entity.User">
+    <resultMap id="loginUser" type="com.example.app.entity.User">
         <id property="id" column="id" ></id>
         <result property="username" column="username"></result>
-        <result property="password" column="password"></result>
+        <result property="passwords" column="password"></result>
         <result property="sex" column="sex"></result>
         <result property="sno" column="sno"></result>
         <result property="phone" column="phone"></result>
@@ -41,10 +54,8 @@
         <result property="regtime" column="regtime"></result>
         <result property="endtime" column="endtime"></result>
     </resultMap>
-    <select id="login1" resultType="com.example.app.entity.User">
-        select 1
-    </select>
     <insert id="register" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.app.entity.User">
-        INSERT INTO user (username, password, sex, sno, phone, col_id, keyword, regtime) VALUES ('${username}', '${password}', ${sex}, '${sno}', '${phone}', ${col_id}, '${phone}', '${regtime}')
+        INSERT INTO user (username, password, sex, sno, phone, col_id, keyword, regtime)
+        VALUES ('${username}', '${password}', ${sex}, '${sno}', '${phone}', ${col_id}, '${keyword}', NOW())
     </insert>
 </mapper>

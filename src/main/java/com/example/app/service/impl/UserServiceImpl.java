@@ -1,9 +1,7 @@
 package com.example.app.service.impl;
 import	java.util.Date;
 
-import com.example.app.entity.Colleage;
-import com.example.app.entity.MD5;
-import com.example.app.entity.User;
+import com.example.app.entity.*;
 import com.example.app.mapper.UserMapper;
 import com.example.app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,49 +28,25 @@ public class UserServiceImpl implements UserService {
         md5.setKey(key);
         user.setPassword(md5.getMd5(user.getPassword()));
         user.setKeyword(key);
-        Date date = new Date();
-        user.setRegtime(date);
         return userMapper.register(user);
     }
 
     /**
      * 账号密码登录
-     * @param username
-     * @param password
+     * @param user
      * @return
      */
     @Override
-    public User login(String username, String password) {
-        User user;
-        user=userMapper.login(username);
-        if (user==null){
+    public User login(User user) {
+        user = userMapper.login(user);
+        if (user == null) {
             return null;
-        }
-        MD5 md5 = new MD5();
-        md5.setKey(user.getKeyword());
-        if (md5.loginByPass(password,user.getPassword())){
-            return user;
-        }
-        return null;
-    }
-
-    /**
-     * 学号密码登录
-     * @param sno
-     * @param password
-     * @return
-     */
-    @Override
-    public User login1(int sno, String password) {
-        User user;
-        user=userMapper.login1(sno);
-        if (user==null){
-            return null;
-        }
-        MD5 md5 = new MD5();
-        md5.setKey(user.getKeyword());
-        if (md5.loginByPass(password,user.getPassword())){
-            return user;
+        }else{
+            MD5 md5 = new MD5();
+            md5.setKey(user.getKeyword());
+            if (md5.loginByPass(user.getPasswords(),user.getPassword())){
+                return user;
+            }
         }
         return null;
     }
@@ -90,6 +64,16 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean hasCol(int col_id) {
         return false;
+    }
+
+    @Override
+    public boolean registerCode(SMS sms) {
+        return userMapper.registerCode(sms)>0;
+    }
+
+    @Override
+    public boolean getCode(Integer code) {
+        return userMapper.getCode(code)>0;
     }
 
 }
