@@ -1,5 +1,6 @@
 package com.example.app.controller;
 
+import org.springframework.ui.Model;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -19,7 +20,7 @@ public class IndexController {
      */
     private static Logger log = LoggerFactory.getLogger(LoginController.class);
     @RequestMapping("index")
-    public String index(){
-        return "index";
+    public String index(Model model){
+        return "app/index";
     }
 }

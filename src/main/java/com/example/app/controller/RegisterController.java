@@ -1,7 +1,6 @@
 package com.example.app.controller;
 
 
-import com.example.app.entity.Colleage;
 import com.example.app.entity.SMS;
 import com.example.app.entity.User;
 import com.example.app.service.UserService;
@@ -46,7 +45,8 @@ public class RegisterController {
             return "register";
         }else {
             if (userService.registerUser(user)>0){
-                return "index";
+                model.addAttribute("user",user);
+                return "forward:index";
             }else {
                 return "register";
             }

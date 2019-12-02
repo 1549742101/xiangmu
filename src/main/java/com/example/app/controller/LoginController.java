@@ -1,6 +1,5 @@
 package com.example.app.controller;
 
-import com.example.app.entity.LoginUser;
 import com.example.app.entity.User;
 import com.example.app.service.UserService;
 import org.slf4j.Logger;
@@ -8,11 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import javax.validation.Valid;
 
 /**
  * Created by IntelliJ IDEA.
@@ -32,21 +28,23 @@ public class LoginController {
 
 
     @RequestMapping(value = {"login1"},method = RequestMethod.POST)
-    public String login(@Valid LoginUser user, BindingResult bindingResult, Model model){
-        if (bindingResult.hasErrors()){
-            return "login";
+    public String login(User user,Model model){
+        boolean [] error = {false,false,false};
+        String[] errorMessage = {"","",""};
+        if (userService.hasUser(user)){
+            if (userService.login(user)==null){
+                error[1]=true;
+                errorMessage[1]="密码错误";
+            }else {
+                model.addAttribute("user",userService.login(user));
+                return "forward:index";
+            }
+        }else {
+            error[0]=true;
+            errorMessage[0]="账号不存在";
         }
-        User users = new User();
-        users.setUsername(user.getUsername());
-        try {
-            users.setSno(Integer.parseInt(user.getUsername()));
-        }catch (NumberFormatException e){
-
-        }
-        users.setPhone(user.getUsername());
-        users.setPassword(user.getPassword());
-        model.addAttribute("users",user);
-        model.addAttribute("user",userService.login(users));
-        return "index";
+        model.addAttribute("error",error);
+        model.addAttribute("emsg",errorMessage);
+        return "login";
     }
 }

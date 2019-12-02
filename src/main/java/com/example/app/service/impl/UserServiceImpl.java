@@ -38,13 +38,17 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public User login(User user) {
+        String pass = user.getPassword();
         user = userMapper.login(user);
         if (user == null) {
             return null;
         }else{
             MD5 md5 = new MD5();
+            System.out.println(user.getKeyword());
+            System.out.println(user.getPasswords());
+            System.out.println(pass);
             md5.setKey(user.getKeyword());
-            if (md5.loginByPass(user.getPasswords(),user.getPassword())){
+            if (md5.loginByPass(pass,user.getPasswords())){
                 return user;
             }
         }
