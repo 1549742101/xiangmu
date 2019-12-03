@@ -1,4 +1,4 @@
-package com.example.app.entity;
+package com.example.app.util;
 
 import java.util.Random;
 

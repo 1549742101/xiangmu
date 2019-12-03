@@ -1,5 +1,7 @@
 package com.example.app.entity;
 
+import com.example.app.util.MD5;
+
 /**
  * Created by IntelliJ IDEA.
  * User: xgl

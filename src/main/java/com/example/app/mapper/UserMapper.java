@@ -1,8 +1,7 @@
 package com.example.app.mapper;
 
-import com.example.app.entity.Code;
 import com.example.app.entity.Colleage;
-import com.example.app.entity.SMS;
+import com.example.app.util.SMS;
 import com.example.app.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
