@@ -3,17 +3,17 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.app.mapper.UserMapper">
-    <insert id="registerCode" parameterType="com.example.app.until.SMS">
+    <insert id="registerCode" parameterType="com.example.app.util.SMS">
         insert into code (code.phone,code.code,code.time)
         values ('${phone}',${code.getKey()},NOW());
     </insert>
     <select id="getCode" parameterType="java.lang.Integer" resultType="java.lang.Integer">
         select count(*) from code where code.code = ${code};
     </select>
-    <select id="hasCol" parameterType="int" resultType="java.lang.Integer">
+    <select id="hasCol" parameterType="java.lang.Integer" resultType="java.lang.Integer">
         select count(*) from where col_id = ${col_id}
     </select>
-    <select id="hasUser" resultType="int" parameterType="com.example.app.entity.User">
+    <select id="hasUser" resultType="java.lang.Integer" parameterType="com.example.app.entity.User">
         select count(*) from user where
         <if test="username!=null">
             username='${username}' or
@@ -43,7 +43,7 @@
 
 
     <resultMap id="loginUser" type="com.example.app.entity.User">
-        <id property="id" column="id" ></id>
+        <id property="id" column="id"></id>
         <result property="username" column="username"></result>
         <result property="passwords" column="password"></result>
         <result property="sex" column="sex"></result>

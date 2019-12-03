@@ -1,4 +1,4 @@
-package com.example.app.until;
+package com.example.app.util;
 
 import lombok.Data;
 import lombok.Setter;

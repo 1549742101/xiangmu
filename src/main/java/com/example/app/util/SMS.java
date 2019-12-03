@@ -1,12 +1,9 @@
-package com.example.app.until;
+package com.example.app.util;
 
 import com.example.app.config.TencentSMSConfig;
 import com.example.app.controller.LoginController;
-import com.example.app.entity.Code;
 import com.github.qcloudsms.SmsMultiSender;
 import com.github.qcloudsms.SmsMultiSenderResult;
-import com.github.qcloudsms.SmsSingleSender;
-import com.github.qcloudsms.SmsSingleSenderResult;
 import com.github.qcloudsms.httpclient.HTTPException;
 import org.json.JSONException;
 import org.slf4j.Logger;

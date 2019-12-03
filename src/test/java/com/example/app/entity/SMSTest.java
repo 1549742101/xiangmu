@@ -1,6 +1,6 @@
 package com.example.app.entity;
 
-import com.example.app.until.SMS;
+import com.example.app.util.SMS;
 import org.junit.jupiter.api.Test;
 
 class SMSTest {

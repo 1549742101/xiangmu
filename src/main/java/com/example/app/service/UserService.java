@@ -2,7 +2,7 @@ package com.example.app.service;
 
 
 import com.example.app.entity.Colleage;
-import com.example.app.until.SMS;
+import com.example.app.util.SMS;
 import com.example.app.entity.User;
 
 import java.util.List;

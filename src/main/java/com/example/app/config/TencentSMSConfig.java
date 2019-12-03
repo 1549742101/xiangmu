@@ -1,6 +1,6 @@
 package com.example.app.config;
 
-import com.example.app.until.TencentSMS;
+import com.example.app.util.TencentSMS;
 
 /**
  * Created by IntelliJ IDEA.

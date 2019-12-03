@@ -59,22 +59,15 @@ import java.lang.annotation.Target;
     Class<?>[] groups() default { };
     Class<? extends Payload>[] payload() default { };
 }
-@Target({ ElementType.FIELD})
+/*@Target({ ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = NotHasUsers.class)
 @interface NotHasUser{
     String message() default "该用户尚未注册";
     Class<?>[] groups() default { };
     Class<? extends Payload>[] payload() default { };
-}
-@Target({ ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = NotLogins.class)
-@interface NotLogin{
-    String message() default "密码错误";
-    Class<?>[] groups() default { };
-    Class<? extends Payload>[] payload() default { };
-}
+}*/
+
 
 class hasUserByUserNames implements ConstraintValidator<hasUserByUserName,String> {
     @Autowired
@@ -122,6 +115,7 @@ class registerCodes implements ConstraintValidator<registerCode,Integer> {
         return userService.getCode(s);
     }
 }
+/*
 class NotHasUsers implements ConstraintValidator<NotHasUser,String> {
     @Autowired
     private UserService userService;
@@ -138,20 +132,4 @@ class NotHasUsers implements ConstraintValidator<NotHasUser,String> {
         return userService.hasUser(user);
     }
 }
-class NotLogins implements ConstraintValidator<NotLogin,LoginUser> {
-    @Autowired
-    private UserService userService;
-    User user=new User();
-    @Override
-    public boolean isValid(LoginUser s, ConstraintValidatorContext constraintValidatorContext) {
-        user.setUsername(s.getUsername());
-        try {
-            user.setSno(Integer.parseInt(s.getUsername()));
-        }catch (NumberFormatException e){
-
-        }
-        user.setPhone(s.getUsername());
-        user.setPassword(s.getPassword());
-        return userService.login(user)==null?true:false;
-    }
-}
+*/

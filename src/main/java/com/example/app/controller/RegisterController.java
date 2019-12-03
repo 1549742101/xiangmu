@@ -1,7 +1,8 @@
 package com.example.app.controller;
 
 
-import com.example.app.until.SMS;
+import com.example.app.entity.Colleage;
+import com.example.app.util.SMS;
 import com.example.app.entity.User;
 import com.example.app.service.UserService;
 import org.slf4j.Logger;
