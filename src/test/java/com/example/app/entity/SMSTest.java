@@ -1,8 +1,7 @@
 package com.example.app.entity;
 
+import com.example.app.until.SMS;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class SMSTest {
     @Test

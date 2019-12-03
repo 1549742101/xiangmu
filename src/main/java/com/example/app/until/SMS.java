@@ -1,7 +1,8 @@
-package com.example.app.entity;
+package com.example.app.until;
 
 import com.example.app.config.TencentSMSConfig;
 import com.example.app.controller.LoginController;
+import com.example.app.entity.Code;
 import com.github.qcloudsms.SmsMultiSender;
 import com.github.qcloudsms.SmsMultiSenderResult;
 import com.github.qcloudsms.SmsSingleSender;
