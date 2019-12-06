@@ -1,5 +1,6 @@
 package com.example.app.mapper;
 
+import com.example.app.entity.Admin;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -12,4 +13,5 @@ import org.springframework.beans.factory.annotation.Autowired;
  **/
 @Mapper
 public interface AdminMapper {
+    public Admin login(Admin admin);
 }
