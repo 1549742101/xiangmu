@@ -8,6 +8,13 @@ server:
       timeout: 720
   port: 8081
 #spring.jpa.open-in-view=false
+
+###文件上传
+file:
+  ###静态资源对外暴露的访问路径
+  staticAccessPath: /api/file/**
+  ###静态资源实际存储路径
+  uploadFolder: C:/upload/img
 spring:
   servlet:
     multipart:
