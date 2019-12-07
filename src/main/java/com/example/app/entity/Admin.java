@@ -11,8 +11,7 @@ import java.util.Date;
  * To change this template use File | Settings | File Templates.
  **/
 @Data
-public class Admin {
-    private int id;
+public class Admin extends AppUser{
     private String username;
     private String password;
     private String keyword;

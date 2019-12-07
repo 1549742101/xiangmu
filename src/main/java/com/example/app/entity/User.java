@@ -20,8 +20,7 @@ import javax.validation.constraints.Pattern;
  **/
 //id;username;password;sex;sno;phone;col;keyword;regtime;endtime;
 @Data
-public class User {
-    private Integer id;//id号
+public class User extends AppUser{
     @Length(min = 5,max = 20,message = "账号名必须在5-18位之间")
     @hasUserByUserName
     private String username;//姓名

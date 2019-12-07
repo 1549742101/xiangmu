@@ -542,3 +542,28 @@
 1575622974080|12|statement|connection 0|SELECT id,username,password,sex,sno,phone,col_id,keyword,regtime,endtime FROM         user where                       username='123456' or                                       1=2|SELECT id,username,password,sex,sno,phone,col_id,keyword,regtime,endtime FROM         user where                       username='123456' or                                       1=2
 1575622974096|13|statement|connection 0|SELECT id,username,password,sex,sno,phone,col_id,keyword,regtime,endtime FROM         user where                       username='123456' or                                       1=2|SELECT id,username,password,sex,sno,phone,col_id,keyword,regtime,endtime FROM         user where                       username='123456' or                                       1=2
 1575622981605|11|statement|connection 0|select * from col|select * from col
+1575643398116|25|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575643534914|28|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575644498692|23|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575644730613|23|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575644862392|24|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575645559940|21|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575645653148|23|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575645962860|24|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575646237598|23|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575646457534|21|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575729466282|46|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575729641273|23|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575729753511|26|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575729894952|21|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575730018696|25|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575730374072|19|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575730574299|22|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575730614267|20|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575730916271|29|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575731203853|26|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575731343293|33|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575731495048|55|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575732373840|32|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575733252522|26|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575733587218|43|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL

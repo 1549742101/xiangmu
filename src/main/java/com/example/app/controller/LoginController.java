@@ -28,7 +28,7 @@ public class LoginController {
 
 
     @RequestMapping(value = {"login1"},method = RequestMethod.POST)
-    public String login(User user,Model model){
+    public String login(User user, Model model){
         boolean [] error = {false,false,false};
         String[] errorMessage = {"","",""};
         if (userService.hasUser(user)){

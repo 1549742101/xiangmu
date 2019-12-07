@@ -42,8 +42,8 @@ public class TemplateController {
         model.addAttribute("cols",userService.All_Colleage());
         return "register";
     }
-    @GetMapping("/")
-    public String All(){
-        return "login";
-    }
+    /*@GetMapping("/")
+    public String All(Model model){
+        return login(model);
+    }*/
 }
