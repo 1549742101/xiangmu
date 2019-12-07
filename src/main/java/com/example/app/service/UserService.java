@@ -2,6 +2,7 @@ package com.example.app.service;
 
 
 import com.example.app.entity.Colleage;
+import com.example.app.entity.Order;
 import com.example.app.util.SMS;
 import com.example.app.entity.User;
 
@@ -22,4 +23,6 @@ public interface UserService {
     public boolean hasCol(int col_id);
     public boolean registerCode(SMS sms);
     public boolean getCode(Integer code);
+
+    public boolean Order(Order order);
 }

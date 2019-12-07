@@ -2,7 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.app.mapper.ShopMapper">
-    <select id="test" resultType="java.lang.String">
+    <select id="getAllShop" resultType="com.example.app.entity.Shop">
+        select 1;
+    </select>
+    <select id="getShopType" resultType="com.example.app.entity.Shop_Type">
+        select 1;
+    </select>
+    <select id="getAllShopByType" resultType="com.example.app.entity.Shop">
+        select 1;
+    </select>
+    <select id="getAllDish" resultType="com.example.app.entity.Dish">
+        select 1;
+    </select>
+    <select id="getAllDishByShop" resultType="com.example.app.entity.Dish">
         select 1;
     </select>
 </mapper>

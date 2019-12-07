@@ -58,4 +58,11 @@
         INSERT INTO user (username, password, sex, sno, phone, col_id, keyword, regtime)
         VALUES ('${username}', '${password}', ${sex}, '${sno}', '${phone}', ${col_id}, '${keyword}', NOW())
     </insert>
+
+    <insert id="insert_order" parameterType="com.example.app.entity.Order">
+        insert into
+    </insert>
+    <insert id="insert_order_count" parameterType="com.example.app.entity.Order">
+        insert into
+    </insert>
 </mapper>

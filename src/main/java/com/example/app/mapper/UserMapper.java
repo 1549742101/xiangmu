@@ -1,6 +1,7 @@
 package com.example.app.mapper;
 
 import com.example.app.entity.Colleage;
+import com.example.app.entity.Order;
 import com.example.app.util.SMS;
 import com.example.app.entity.User;
 import org.apache.ibatis.annotations.Mapper;
@@ -26,4 +27,8 @@ public interface UserMapper {
     int hasCol(int col_id);
     int registerCode(SMS sms);
     int getCode(@Param("code") Integer code);
+
+    int insert_order(Order order);
+    int insert_order_count(Order order);
+
 }

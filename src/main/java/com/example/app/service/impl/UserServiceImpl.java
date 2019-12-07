@@ -81,4 +81,10 @@ public class UserServiceImpl implements UserService {
         return userMapper.getCode(code)>0;
     }
 
+    @Override
+    public boolean Order(Order order) {
+
+        return false;
+    }
+
 }

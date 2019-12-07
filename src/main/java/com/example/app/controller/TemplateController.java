@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * To change this template use File | Settings | File Templates.
  **/
 @Controller
+@RequestMapping("/")
 public class TemplateController {
     @Autowired
     private UserService userService;
@@ -32,6 +33,8 @@ public class TemplateController {
         model.addAttribute("user",user);
         boolean [] error = {false,false,false};
         String[] errorMessage = {"","",""};
+        String[] url = {"/login1","/register","forget"};
+        model.addAttribute("uri",url);
         model.addAttribute("error",error);
         model.addAttribute("emsg",errorMessage);
         return "login";

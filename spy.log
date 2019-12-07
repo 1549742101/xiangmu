@@ -567,3 +567,17 @@
 1575732373840|32|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
 1575733252522|26|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
 1575733587218|43|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575735489093|24|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575735583813|25|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575735632512|17|statement|connection 0|select count(*) from user where                       username='123456' or                                       1=2|select count(*) from user where                       username='123456' or                                       1=2
+1575735632536|11|statement|connection 0|SELECT id,username,password,sex,sno,phone,col_id,keyword,regtime,endtime FROM         user where                       username='123456' or                                       1=2|SELECT id,username,password,sex,sno,phone,col_id,keyword,regtime,endtime FROM         user where                       username='123456' or                                       1=2
+1575735632562|11|statement|connection 0|SELECT id,username,password,sex,sno,phone,col_id,keyword,regtime,endtime FROM         user where                       username='123456' or                                       1=2|SELECT id,username,password,sex,sno,phone,col_id,keyword,regtime,endtime FROM         user where                       username='123456' or                                       1=2
+1575736215949|27|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575736336932|20|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575737028613|20|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575737166949|19|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575737481055|25|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575737646788|21|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575737719889|10|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1575737719917|11|statement|connection 0|select * from col|select * from col
+1575737799373|38|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL

@@ -9,7 +9,7 @@ import lombok.Data;
  * To change this template use File | Settings | File Templates.
  **/
 @Data
-public class Shop_type {
+public class Shop_Type {
     private int id;
     private String name;
 }

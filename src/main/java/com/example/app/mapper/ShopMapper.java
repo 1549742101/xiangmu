@@ -1,6 +1,11 @@
 package com.example.app.mapper;
 
+import com.example.app.entity.Dish;
+import com.example.app.entity.Shop;
+import com.example.app.entity.Shop_Type;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -11,6 +16,10 @@ import org.apache.ibatis.annotations.Mapper;
  **/
 @Mapper
 public interface ShopMapper {
-    public String test();
+    List<Shop_Type> getShopType();
+    List<Shop> getAllShop();
+    List<Shop> getAllShopByType(Shop_Type shop_type);
+    List<Dish> getAllDish();
+    List<Dish> getAllDishByShop();
 }
 
