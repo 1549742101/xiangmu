@@ -4,6 +4,8 @@ import com.example.app.entity.AppUser;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+
 
 /**
  * Created by IntelliJ IDEA.
@@ -14,6 +16,6 @@ import org.springframework.web.multipart.MultipartFile;
  **/
 @Service
 public interface FileService {
-    public String upload(MultipartFile file, AppUser appUser);
+    public String upload(MultipartFile file, AppUser appUser,String pre) throws IOException;
     public String getFile();
 }
