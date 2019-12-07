@@ -18,7 +18,7 @@ public class IndexController {
     /**
      * 日志文件
      */
-    private static Logger log = LoggerFactory.getLogger(LoginController.class);
+    private static Logger log = LoggerFactory.getLogger(IndexController.class);
     @RequestMapping("index")
     public String index(Model model){
         return "app/index";

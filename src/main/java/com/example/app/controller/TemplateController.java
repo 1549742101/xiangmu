@@ -1,5 +1,6 @@
 package com.example.app.controller;
 
+import com.example.app.entity.AppUser;
 import com.example.app.entity.User;
 import com.example.app.service.UserService;
 import org.slf4j.Logger;
@@ -24,10 +25,10 @@ public class TemplateController {
     /**
      * 日志文件
      */
-    private static Logger log = LoggerFactory.getLogger(LoginController.class);
+    private static Logger log = LoggerFactory.getLogger(TemplateController.class);
     @GetMapping({"login","login.html"})
     public String login(Model model){
-        User user=new User();
+        AppUser user=new AppUser();
         model.addAttribute("user",user);
         boolean [] error = {false,false,false};
         String[] errorMessage = {"","",""};

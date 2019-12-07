@@ -1,7 +1,6 @@
 package com.example.app.util;
 
 import com.example.app.config.TencentSMSConfig;
-import com.example.app.controller.LoginController;
 import com.github.qcloudsms.SmsMultiSender;
 import com.github.qcloudsms.SmsMultiSenderResult;
 import com.github.qcloudsms.httpclient.HTTPException;
@@ -22,7 +21,7 @@ public class SMS {
     /**
      * 日志文件
      */
-    private static Logger log = LoggerFactory.getLogger(LoginController.class);
+    private static Logger log = LoggerFactory.getLogger(SMS.class);
     private String phone;
     private String[] phones;
     private Code code;
