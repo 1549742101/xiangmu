@@ -1,21 +1,100 @@
 <!DOCTYPE html>
-<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>掌上食堂</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/public.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
 </head>
 <body>
-<h1>个人信息</h1>
-<!--//id;username;password;sex;sno;phone;col;keyword;regtime;endtime;-->
-账号id：<p th:text="${user.id}"></p>
-账号名：<p th:text="${user.username}"></p>
-密码：<p th:text="${user.password}"></p>
-性别：<p th:text="${user.sex}==0?'女':'男'"></p>
-手机号：<p th:text="${user.phone}"></p>
-学院：<p th:text="${user.col_id}"></p>
-keyword：<p th:text="${user.keyword}"></p>
-注册时间：<p th:text="${user.regtime}"></p>
-上次登录时间：<p th:text="${user.endtime}"></p>
-hello world
+<div class="content">
+    <div class="header ctt">
+        <p class="phone"><a href="">联系我们</a></p>
+    </div>
+    <div class="menu">
+        <div class="ctt">
+            <img class="logo" src="img/1.png"  alt="logo" width="14%" height="40px">
+            <div class="menu_content">
+                <ul class="ul_menu">
+                    <li class="active"><a href="">首页</a></li>
+                    <li class="active"><a href="">觅食</a></li>
+                    <li class="active"><a href="">订单</a></li>
+                    <li class="active"><a href="">账户</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="form ctt">
+        <div class="form_content">
+            <ul class="form_menu">
+                <li>尊敬的 <a href="">XXX</a>用户，想吃点什么呢?</li>
+                <li>
+                    <ul class="form_menu1">
+                        <li><a href="/index">【刷新页面】</a></li>
+                    </ul>
+                    <ul class="form_menu2">
+                        <li ><a href="/index0">【退出登录】</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="banner ctt">
+        <ul class="banner_ul">
+            <li><img src="img/2.jpg" alt=""></li>
+            <li><img src="" alt=""></li>
+            <li><img src="" alt=""></li>
+        </ul>
+        <ul class="banner_ol">
+            <li>油油鱼</li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="message ctt bgb">
+        <div class="span_">
+            <img src="img/4.gif" class="title_img" width="215px" height="47px">
+            <div class="activity">
+                <ul class="act_ul">
+                    <li>
+                        <p>xxxxxxxxxx</p>
+                        <span>2019/11/11</span></li>
+                    <li>
+                        <p></p>
+                        <span></span></li>
+                    <li>
+                        <p></p>
+                        <span></span></li>
+                    <li>
+                        <p></p>
+                        <span></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="shop ctt bgb">
+        <div class="span_">
+            <img src="img/5.gif">
+            <ul class="shop_content">
+                <li>
+                    <span><img src="" alt=""></span>
+                    <span></span>
+                </li>
+                <li>
+                    <span><img src="" alt=""></span>
+                    <span></span>
+                </li>
+            </ul>
+            <p class="more_shop">
+                更多店铺>>>
+            </p>
+        </div>
+    </div>
+    <div class="end">
+        <h1>贵龙科技有限公司</h1>
+    </div>
+</div>
 </body>
 </html>

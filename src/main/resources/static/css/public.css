@@ -1,0 +1,30 @@
+/* CSS Document */
+*{
+	padding: 0;
+	margin: 0;
+}
+ul,li,ol{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+.clears{
+	clear: both;
+	height: 0;
+	line-height:0;
+	font-size: 0;
+	overflow: hidden;
+}
+body{
+	font-family: arial,verdana,'庞门正道标题体2 0增强版','Microsoft YaHei';
+}
+/*web css*/
+.ctt{
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.bgb{
+	background: white;
+}
