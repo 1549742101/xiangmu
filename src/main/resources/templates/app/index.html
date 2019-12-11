@@ -18,7 +18,7 @@
             <img class="logo" src="img/1.png"  alt="logo" width="14%" height="40px">
             <div class="menu_content">
                 <ul class="ul_menu">
-                    <li class="active"><a href="">首页</a></li>
+                    <li class="active"><a href="/index">首页</a></li>
                     <li class="active"><a href="">觅食</a></li>
                     <li class="active"><a href="">订单</a></li>
                     <li class="active"><a href="">账户</a></li>
@@ -28,14 +28,25 @@
     </div>
     <div class="form ctt">
         <div class="form_content">
-            <ul class="form_menu">
-                <li>尊敬的 <a href="">XXX</a>用户，想吃点什么呢?</li>
+            <ul class="form_menu" th:if="${user.username}!=null" th:object="${user}">
+                <li>尊敬的 <a href="" th:text="${user.username}"></a>用户，想吃点什么呢?</li>
                 <li>
                     <ul class="form_menu1">
                         <li><a href="/index">【刷新页面】</a></li>
                     </ul>
                     <ul class="form_menu2">
                         <li ><a href="/index0">【退出登录】</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="form_menu" th:if="${user.username}==null">
+                <li>尊敬的<a href=""></a>用户，想吃点什么呢?</li>
+                <li>
+                    <ul class="form_menu1">
+                        <li><a href="/index">【刷新页面】</a></li>
+                    </ul>
+                    <ul class="form_menu2">
+                        <li ><a href="/login">【登录】</a></li>
                     </ul>
                 </li>
             </ul>

@@ -43,7 +43,7 @@ public class UserController {
             return "register";
         }else {
             if (userService.registerUser(user)>0){
-                return "index";
+                return new IndexController().index(user,model);
             }else {
                 return "register";
             }
@@ -75,8 +75,7 @@ public class UserController {
                 error[1]=true;
                 errorMessage[1]="密码错误";
             }else {
-                model.addAttribute("user",userService.login(user));
-                return "forward:index";
+                return new IndexController().index(userService.login(user),model);
             }
         }else {
             error[0]=true;

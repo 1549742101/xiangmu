@@ -1,9 +1,11 @@
 package com.example.app.controller;
 
+import com.example.app.entity.User;
 import org.springframework.ui.Model;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -20,8 +22,8 @@ public class IndexController {
      */
     private static Logger log = LoggerFactory.getLogger(IndexController.class);
     @RequestMapping("index")
-    public String index(Model model){
-        model.addAttribute("user",null);
+    public String index(@ModelAttribute("user") User user, Model model){
+        model.addAttribute(user);
         return "app/index";
     }
 

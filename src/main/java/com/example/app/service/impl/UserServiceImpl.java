@@ -45,11 +45,9 @@ public class UserServiceImpl implements UserService {
             return null;
         }else{
             MD5 md5 = new MD5();
-            System.out.println(user.getKeyword());
-            System.out.println(user.getPasswords());
-            System.out.println(pass);
             md5.setKey(user.getKeyword());
             if (md5.loginByPass(pass,user.getPasswords())){
+                user.setPassword("");
                 return user;
             }
         }

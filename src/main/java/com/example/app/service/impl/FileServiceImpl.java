@@ -4,9 +4,11 @@ import java.io.FileInputStream;
 
 import com.example.app.entity.AppUser;
 import com.example.app.entity.Img;
+import com.example.app.mapper.FileMapper;
 import com.example.app.service.FileService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -29,6 +31,8 @@ public class FileServiceImpl implements FileService {
     private String staticAccessPath;
     @Value("${file.uploadFolder}")
     private String uploadFolder;
+    @Autowired
+    private FileMapper fileMapper;
     @Override
     public String upload(MultipartFile file, AppUser appUser,String pre) {
         String fileName = Long.toString(Calendar.getInstance().getTimeInMillis())+appUser.getId()+"."+pre;
@@ -47,11 +51,11 @@ public class FileServiceImpl implements FileService {
         img.setOriginalname(originalname);
         img.setUser_id(appUser.getId());
         img.setType(user_type);
-        return fileName;
+        return fileMapper.upload(img)>0?fileName:null;
     }
 
     @Override
-    public String getFile() {
-        return null;
+    public Img getFile(int id) {
+        return fileMapper.getImg(id);
     }
 }

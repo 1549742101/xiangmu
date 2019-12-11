@@ -13,5 +13,5 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface FileMapper {
     int upload(Img img);
-    Img getImg();
+    Img getImg(int id);
 }

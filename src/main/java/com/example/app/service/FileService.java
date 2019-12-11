@@ -1,6 +1,7 @@
 package com.example.app.service;
 
 import com.example.app.entity.AppUser;
+import com.example.app.entity.Img;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -17,5 +18,5 @@ import java.io.IOException;
 @Service
 public interface FileService {
     public String upload(MultipartFile file, AppUser appUser,String pre) throws IOException;
-    public String getFile();
+    public Img getFile(int id);
 }
