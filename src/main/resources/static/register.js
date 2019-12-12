@@ -11,6 +11,10 @@
     }
     $(".sms").click(
         function () {
+            if(this.form.phone.value===null||this.form.phone.value===""){
+                alert("请输入手机号")
+                return
+            }
             $.post(
                 "code",
                 {

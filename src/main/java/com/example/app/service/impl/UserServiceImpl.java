@@ -7,13 +7,12 @@ import com.example.app.util.MD5;
 import com.example.app.util.SMS;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.Calendar;
 import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
- * User: xgl
+ * AppUser: xgl
  * Date: 2019/11/17
  * Time: 0:37
  * To change this template use File | Settings | File Templates.
@@ -22,46 +21,54 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
+    /**
+     * 功能描述
+     * @author xgl
+     * @date 2019/12/12
+      * @param appUser
+     * @return int
+     */
     @Override
-    public int registerUser(User user) {
+    public int registerAppUser(AppUser appUser) {
         MD5 md5 = new MD5();
         long key = Calendar.getInstance().getTimeInMillis();
         md5.setKey(key);
-        user.setPassword(md5.getMd5(user.getPassword()));
-        user.setKeyword(key);
-        return userMapper.register(user);
+        appUser.setPassword(md5.getMd5(appUser.getPassword()));
+        appUser.setKeyword(key);
+        return userMapper.registerBaseUser(appUser)>0&&userMapper.registerAppUser(appUser)>0?1:-1;
     }
 
-    /**
-     * 账号密码登录
-     * @param user
-     * @return
-     */
     @Override
-    public User login(User user) {
-        String pass = user.getPassword();
-        user = userMapper.login(user);
-        if (user == null) {
+    public int registerBaseUser(BaseUser baseUser) {
+        MD5 md5 = new MD5();
+        long key = Calendar.getInstance().getTimeInMillis();
+        md5.setKey(key);
+        baseUser.setPassword(md5.getMd5(baseUser.getPassword()));
+        baseUser.setKeyword(key);
+        return userMapper.registerBaseUser(baseUser);
+    }
+    @Override
+    public BaseUser login(BaseUser baseUser) {
+        String pass = baseUser.getPassword();
+        long key = baseUser.getKeyword();
+        MD5 md5 = new MD5();
+        md5.setKey(key);
+        if(md5.loginByPass(pass,baseUser.getPassword())){
+            baseUser.setPassword("");
+            return baseUser;
+        }else {
             return null;
-        }else{
-            MD5 md5 = new MD5();
-            md5.setKey(user.getKeyword());
-            if (md5.loginByPass(pass,user.getPasswords())){
-                user.setPassword("");
-                return user;
-            }
         }
-        return null;
     }
 
     @Override
-    public List<Colleage> All_Colleage() {
-        return userMapper.All_Colleage();
+    public List<College> allCollege() {
+        return userMapper.allCollege();
     }
 
     @Override
-    public boolean hasUser(User user) {
-        return userMapper.hasUser(user)>0?true:false;
+    public boolean hasUser(BaseUser baseUser) {
+        return userMapper.hasUser(baseUser)>0?true:false;
     }
 
     @Override

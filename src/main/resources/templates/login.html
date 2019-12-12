@@ -28,7 +28,7 @@
                 <br>
                 <div class="input-group" th:class="${error[0]}?'has-error input-group':'input-group'">
                     <span class="input-group-addon">账&ensp;&ensp;&ensp;&ensp;号</span>
-                    <input type="text" class="form-control" name="username" placeholder="请输入用户名或学号">
+                    <input type="text" class="form-control" name="username" placeholder="请输入用户名或手机号">
                 </div>
                 <p class="text-center text-warning" th:if="${error[0]}" th:text="${emsg[0]}"></p>
                 <br th:if="!${error[0]}">

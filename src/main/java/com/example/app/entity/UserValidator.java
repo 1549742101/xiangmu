@@ -13,47 +13,55 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Created by IntelliJ IDEA.
- * User: xgl
- * Date: 2019/11/23
- * Time: 2:13
- * To change this template use File | Settings | File Templates.
- **/
+ * @author xgl
+ */
 @Target({ ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = hasUserByUserNames.class)
+@Constraint(validatedBy = UserByUserName.class)
 @interface hasUserByUserName{
     String message() default "该用户名已经被注册";
     Class<?>[] groups() default { };
     Class<? extends Payload>[] payload() default { };
 }
+/**
+ * @author xgl
+ */
 @Target({ ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = hasUserByPhones.class)
+@Constraint(validatedBy = UserByPhone.class)
 @interface hasUserByPhone{
     String message() default "该手机号已经被注册";
     Class<?>[] groups() default { };
     Class<? extends Payload>[] payload() default { };
 }
+/**
+ * @author xgl
+ */
 @Target({ ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = hasUserBySnos.class)
+@Constraint(validatedBy = UserBySno.class)
 @interface hasUserBySno{
     String message() default "该学号或工号已经被注册";
     Class<?>[] groups() default { };
     Class<? extends Payload>[] payload() default { };
 }
+/**
+ * @author xgl
+ */
 @Target({ ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = hasCols.class)
+@Constraint(validatedBy = Cols.class)
 @interface hasCol{
     String message() default "请选择你的学院";
     Class<?>[] groups() default { };
     Class<? extends Payload>[] payload() default { };
 }
+/**
+ * @author xgl
+ */
 @Target({ ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = registerCodes.class)
+@Constraint(validatedBy = Codes.class)
 @interface registerCode{
     String message() default "验证码错误";
     Class<?>[] groups() default { };
@@ -69,37 +77,37 @@ import java.lang.annotation.Target;
 }*/
 
 
-class hasUserByUserNames implements ConstraintValidator<hasUserByUserName,String> {
+class UserByUserName implements ConstraintValidator<hasUserByUserName,String> {
     @Autowired
     private UserService userService;
-    User user = new User();
+    AppUser user = new AppUser();
     @Override
     public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) {
         user.setUsername(s);
         return !userService.hasUser(user);
     }
 }
-class hasUserBySnos implements ConstraintValidator<hasUserBySno,Integer> {
+class UserBySno implements ConstraintValidator<hasUserBySno,Integer> {
     @Autowired
     private UserService userService;
-    User user = new User();
+    AppUser user = new AppUser();
     @Override
     public boolean isValid(Integer s, ConstraintValidatorContext constraintValidatorContext) {
         user.setSno(s);
         return !userService.hasUser(user);
     }
 }
-class hasUserByPhones implements ConstraintValidator<hasUserByPhone,String> {
+class UserByPhone implements ConstraintValidator<hasUserByPhone,String> {
     @Autowired
     private UserService userService;
-    User user = new User();
+    AppUser user = new AppUser();
     @Override
     public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) {
         user.setPhone(s);
         return !userService.hasUser(user);
     }
 }
-class hasCols implements ConstraintValidator<hasCol,Integer> {
+class Cols implements ConstraintValidator<hasCol,Integer> {
     @Autowired
     private UserService userService;
     @Override
@@ -107,7 +115,7 @@ class hasCols implements ConstraintValidator<hasCol,Integer> {
         return !userService.hasCol(s);
     }
 }
-class registerCodes implements ConstraintValidator<registerCode,Integer> {
+class Codes implements ConstraintValidator<registerCode,Integer> {
     @Autowired
     private UserService userService;
     @Override

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>掌上食堂-注册</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="">
+</head>
+<body>
+<div class="container-fluid" style="background: beige">
+    <div class="clearfix row">
+        <div class="col-md-4 visible-md visible-lg">
+            <a href="https://www.guilongkeji.com.cn"><img src="img/LoongLove.png" alt="LoongLove" style="width: 20%;margin-left: 2%"></a>
+        </div>
+        <div class="col-md-4"><h1 class="text-center text-danger" >
+            掌上食堂-欢迎您
+        </h1></div>
+        <div class="col-md-6  col-md-offset-3" style="background: rgba(256,256,256,0.5); ">
+            <h4 class="text-center text-success">后台注册</h4>
+            <form action="#" th:action="@{/registerMenchant}" th:object="${user}" method="post" class="bs-example bs-example-form" role="form" >
+                <div class="input-group" th:class="${#fields.hasErrors('username')}?'has-error input-group':'input-group'">
+                    <span class="input-group-addon">用&ensp;户&ensp;名</span>
+                    <input type="text" class="form-control username" name="username"  placeholder="请输入用户名，长度大于6位" th:field="*{username}">
+                </div>
+                <p class="text-center text-warning" th:if="${#fields.hasErrors('username')}" th:text="${#fields.errors('username')[0]}"></p>
+                <br th:if="!${#fields.hasErrors('username')}">
+                <div class="input-group"  th:class="${#fields.hasErrors('password')}?'has-error input-group':'input-group'">
+                    <span class="input-group-addon">密&ensp;&ensp;&ensp;&ensp;码</span>
+                    <input type="password" class="form-control password1" name="password1" placeholder="请输入密码,长度为6-18位"  th:field="*{password}">
+                </div>
+                <p class="text-center text-warning" th:if="${#fields.hasErrors('password')}" th:text="${#fields.errors('password')[0]}"></p>
+                <br th:if="!${#fields.hasErrors('password')}">
+                <div class="input-group" th:class="${#fields.hasErrors('samePassword')}?'has-error input-group':'input-group'">
+                    <span class="input-group-addon">确认密码</span>
+                    <input type="password" class="form-control password2" name="password2" placeholder="请确认密码" th:field="*{passwords}">
+                </div>
+                <p class="text-center text-warning" th:if="${#fields.hasErrors('samePassword')}" th:text="${#fields.errors('samePassword')[0]}"></p>
+                <br th:if="!${#fields.hasErrors('samePassword')}">
+                <p class="text-center text-warning" th:if="${#fields.hasErrors('col_id')}" th:text="${#fields.errors('col_id')[0]}"></p>
+                <br th:if="!${#fields.hasErrors('col_id')}">
+                <p class="text-center text-warning" th:if="${#fields.hasErrors('sex')}" th:text="${#fields.errors('sex')[0]}"></p>
+                <br th:if="!${#fields.hasErrors('sex')}">
+                <div class="input-group" th:class="${#fields.hasErrors('phone')}?'has-error input-group':'input-group'">
+                    <span class="input-group-addon" th:field="*{phone}">手&ensp;机&ensp;号</span>
+                    <input type="text" class="form-control phone" name="phone" placeholder="请输入手机号">
+                    <span class="input-group-btn">
+                    <button class="btn btn-default sms" type="button">
+                        发送验证码
+                    </button>
+                    </span>
+                </div>
+                <p class="text-center text-warning" th:if="${#fields.hasErrors('phone')}" th:text="${#fields.errors('phone')[0]}"></p>
+                <br th:if="!${#fields.hasErrors('phone')}">
+                <div class="input-group" th:class="${#fields.hasErrors('code')}?'has-error input-group':'input-group'">
+                    <span class="input-group-addon">验&ensp;证&ensp;码</span>
+                    <input type="text" class="form-control code" name="code" placeholder="请输入手机短信验证码" th:field="*{code}">
+                </div>
+                <p class="text-center text-warning" th:if="${#fields.hasErrors('code')}" th:text="${#fields.errors('code')[0]}"></p>
+                <br th:if="!${#fields.hasErrors('code')}">
+                <div>
+                    <button class="btn btn-success btn-block" type="submit">注册</button>
+                </div>
+                <div class="text-center">
+                    已有账号!<a th:href="@{/login.html}" href="/login.html" class="text-">登录</a>
+                </div>
+                <br>
+            </form>
+        </div>
+        <footer>
+            <div class="col-sm-12 text-center">
+                <strong>Copyright © 2018-2021 <a href="https://guilongkeji.com.cn">LoongLove</a>. All rights reserved.</strong>
+            </div>
+        </footer>
+
+    </div>
+</div>
+<script src="/register.js"></script>
+</body>
+</html>

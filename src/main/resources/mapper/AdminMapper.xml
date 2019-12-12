@@ -6,7 +6,7 @@
     <select id="login" resultMap="login_admin">
         select count(*) from admin where  username = ${username};
     </select>
-    <resultMap id="login_admin" type="com.example.app.entity.Admin">
+    <resultMap id="login_admin" type="com.example.app.entity.BaseUser">
 
     </resultMap>
 </mapper>

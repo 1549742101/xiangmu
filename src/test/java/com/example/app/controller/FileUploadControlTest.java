@@ -1,10 +1,9 @@
 package com.example.app.controller;
 
-import com.example.app.entity.AppUser;
-import com.example.app.entity.User;
+import com.example.app.entity.BaseUser;
 import org.junit.jupiter.api.Test;
 import org.springframework.mock.web.MockMultipartFile;
-import static org.junit.Assert.*;
+
 import java.io.*;
 
 class FileUploadControlTest {
@@ -12,7 +11,7 @@ class FileUploadControlTest {
     @Test
     void upload() throws IOException {
         FileUploadController file = new FileUploadController();
-        AppUser user = new User();
+        BaseUser user = new BaseUser();
         user.setId(123);
         File fi = new File("E:/ideaproject/app/src/main/resources/static/img/LoongLove.png");
         InputStream fileInputStream = new FileInputStream(fi);

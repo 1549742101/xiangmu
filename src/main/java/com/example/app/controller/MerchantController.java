@@ -1,6 +1,6 @@
 package com.example.app.controller;
 
-import com.example.app.entity.AppUser;
+import com.example.app.entity.BaseUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,13 +12,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Date: 2019/12/8
  * Time: 0:09
  * To change this template use File | Settings | File Templates.
- **/
+ * @author xgl
+ * */
 @Controller
 @RequestMapping("/MCT")
 public class MerchantController {
     @GetMapping({"login","login.html"})
     public String login(Model model){
-        AppUser user=new AppUser();
+        BaseUser user=new BaseUser();
         model.addAttribute("user",user);
         boolean [] error = {false,false,false};
         String[] errorMessage = {"","",""};
@@ -27,5 +28,11 @@ public class MerchantController {
         model.addAttribute("error",error);
         model.addAttribute("emsg",errorMessage);
         return "login";
+    }
+    @GetMapping("MCT/register")
+    public String getRegister(Model model){
+        BaseUser user = new BaseUser();
+        model.addAttribute("user",user);
+        return "register2";
     }
 }

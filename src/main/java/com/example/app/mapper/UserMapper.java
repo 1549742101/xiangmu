@@ -1,9 +1,7 @@
 package com.example.app.mapper;
 
-import com.example.app.entity.Colleage;
-import com.example.app.entity.Order;
+import com.example.app.entity.*;
 import com.example.app.util.SMS;
-import com.example.app.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -16,19 +14,91 @@ import java.util.List;
  * Date: 2019/11/17
  * Time: 0:50
  * To change this template use File | Settings | File Templates.
- **/
+ *
+ * @author xgl
+ * */
 @Mapper
 public interface UserMapper {
-    int register(User user);
-    User login(User user);
+    /**
+     * 功能描述
+     * @author xgl
+     * @date 2019/12/12
+      * @param appUser
+     * @return int
+     */
+    int registerAppUser(AppUser appUser);
+    /**
+     * 功能描述
+     * @author xgl
+     * @date 2019/12/12
+      * @param baseUser
+     * @return int
+     */
+    int registerBaseUser(BaseUser baseUser);
+    /**
+     * 功能描述
+     * @author xgl
+     * @date 2019/12/12
+      * @param baseUser
+     * @return com.example.app.entity.BaseUser
+     */
+    BaseUser loginBaseUser(BaseUser baseUser);
+    /**
+     * 功能描述
+     * @author xgl
+     * @date 2019/12/12
+      * @param
+     * @return java.util.List<com.example.app.entity.College>
+     */
     @Select("select * from col")
-    List<Colleage> All_Colleage();
-    int hasUser(User user);
+    List<College> allCollege();
+    /**
+     * 功能描述
+     * @author xgl
+     * @date 2019/12/12
+      * @param user
+     * @return int
+     */
+    int hasUser(BaseUser user);
+    /**
+     * 功能描述
+     * @author xgl
+     * @date 2019/12/12
+      * @param col_id
+     * @return int
+     */
     int hasCol(int col_id);
+    /**
+     * 功能描述
+     * @author xgl
+     * @date 2019/12/12
+      * @param sms
+     * @return int
+     */
     int registerCode(SMS sms);
+    /**
+     * 功能描述
+     * @author xgl
+     * @date 2019/12/12
+      * @param code
+     * @return int
+     */
     int getCode(@Param("code") Integer code);
-
-    int insert_order(Order order);
-    int insert_order_count(Order order);
+    /**
+     * 功能描述
+     * @author xgl
+     * @date 2019/12/12
+      * @param order
+     * @return int
+     */
+    int insertOrder(Order order);
+    /**
+     * 功能描述
+     * @author xgl
+     * @date 2019/12/12
+      * @param order
+     * @return int
+     */
+    int insertOrderCount(Order order);
 
 }

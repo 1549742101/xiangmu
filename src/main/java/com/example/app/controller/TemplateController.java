@@ -1,7 +1,7 @@
 package com.example.app.controller;
 
 import com.example.app.entity.AppUser;
-import com.example.app.entity.User;
+import com.example.app.entity.BaseUser;
 import com.example.app.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,21 +29,21 @@ public class TemplateController {
     private static Logger log = LoggerFactory.getLogger(TemplateController.class);
     @GetMapping({"login","login.html"})
     public String login(Model model){
-        AppUser user=new AppUser();
+        BaseUser user=new BaseUser();
         model.addAttribute("user",user);
         boolean [] error = {false,false,false};
         String[] errorMessage = {"","",""};
         String[] url = {"/login1","/register","forget"};
         model.addAttribute("uri",url);
         model.addAttribute("error",error);
-        model.addAttribute("emsg",errorMessage);
+        model.addAttribute("msg",errorMessage);
         return "login";
     }
     @GetMapping({"register","reg","register.html"})
     public String register(Model model){
-        User user = new User();
+        AppUser user = new AppUser();
         model.addAttribute("user",user);
-        model.addAttribute("cols",userService.All_Colleage());
+        model.addAttribute("cols",userService.allCollege());
         return "register";
     }
     /*@GetMapping("/")

@@ -1,8 +1,6 @@
 package com.example.app.service.impl;
-import	java.io.FileInputStream;
-import java.io.FileInputStream;
 
-import com.example.app.entity.AppUser;
+import com.example.app.entity.BaseUser;
 import com.example.app.entity.Img;
 import com.example.app.mapper.FileMapper;
 import com.example.app.service.FileService;
@@ -34,7 +32,7 @@ public class FileServiceImpl implements FileService {
     @Autowired
     private FileMapper fileMapper;
     @Override
-    public String upload(MultipartFile file, AppUser appUser,String pre) {
+    public String upload(MultipartFile file, BaseUser appUser, String pre) {
         String fileName = Long.toString(Calendar.getInstance().getTimeInMillis())+appUser.getId()+"."+pre;
         File targetFile = new File(uploadFolder,fileName);
         String originalname = file.getOriginalFilename();

@@ -1,7 +1,6 @@
 package com.example.app.controller;
 
-import com.example.app.entity.Admin;
-import com.example.app.entity.AppUser;
+import com.example.app.entity.BaseUser;
 import com.example.app.service.FileService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,12 +33,12 @@ public class FileUploadController {
 
     @ResponseBody
     @RequestMapping(value = "/upload",method = RequestMethod.POST)
-    public String upload(@RequestParam("file") MultipartFile file, AppUser appUser) {
+    public String upload(@RequestParam("file") MultipartFile file, BaseUser appUser) {
         if (file.isEmpty()){
             return "请选择文件";
         }
         String filename = file.getOriginalFilename();
-        Admin user = new Admin();
+        BaseUser user = new BaseUser();
         user.setId(123);
         appUser =user;
         for (String pre:fileType){

@@ -1,6 +1,7 @@
 package com.example.app.controller;
 
-import com.example.app.entity.User;
+import com.example.app.entity.AppUser;
+import com.example.app.entity.BaseUser;
 import com.example.app.service.UserService;
 import com.example.app.util.SMS;
 import org.slf4j.Logger;
@@ -12,6 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.regex.Pattern;
 
 /**
  * Created by IntelliJ IDEA.
@@ -19,7 +21,9 @@ import javax.validation.Valid;
  * Date: 2019/12/8
  * Time: 0:14
  * To change this template use File | Settings | File Templates.
- **/
+ *
+ * @author xgl
+ */
 @RequestMapping("/")
 @Controller
 public class UserController {
@@ -37,12 +41,12 @@ public class UserController {
      * @return user or error message
      */
     @PostMapping("reg")
-    public String Register(@Valid @ModelAttribute("user") User user, BindingResult bindingResult, Model model){
-        model.addAttribute("cols",userService.All_Colleage());
+    public String Register(@Valid @ModelAttribute("user") AppUser user, BindingResult bindingResult, Model model){
+        model.addAttribute("cols",userService.allCollege());
         if (bindingResult.hasErrors()){
             return "register";
         }else {
-            if (userService.registerUser(user)>0){
+            if (userService.registerAppUser(user)>0){
                 return new IndexController().index(user,model);
             }else {
                 return "register";
@@ -57,6 +61,10 @@ public class UserController {
     @RequestMapping("code")
     @ResponseBody
     public String code(String phone, Model model){
+        String regx="^((13[0-9])|(14[5-9])|(15([0-3]|[5-9]))|(16([5,6])|(17[0-8])|(18[0-9]))|(19[1,8,9]))\\d{8}$";
+        if(Pattern.matches(regx,phone)){
+            return "请输入正确的手机号";
+        }
         sms=new SMS();
         sms.setPhone(phone);
         if (sms.send()&&userService.registerCode(sms)){
@@ -67,7 +75,7 @@ public class UserController {
     }
 
     @RequestMapping(value = {"login1"},method = RequestMethod.POST)
-    public String login(User user, Model model){
+    public String login(BaseUser user, Model model){
         boolean [] error = {false,false,false};
         String[] errorMessage = {"","",""};
         if (userService.hasUser(user)){
@@ -82,7 +90,8 @@ public class UserController {
             errorMessage[0]="账号不存在";
         }
         model.addAttribute("error",error);
-        model.addAttribute("emsg",errorMessage);
+        model.addAttribute("msg",errorMessage);
         return "login";
     }
+
 }

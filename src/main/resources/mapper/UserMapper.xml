@@ -3,6 +3,31 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.app.mapper.UserMapper">
+    <!--注册类-->
+    <resultMap id="AppUser" type="com.example.app.entity.AppUser">
+        <id property="id" column="id"></id>
+        <result property="username" column="username"></result>
+        <result property="passwords" column="password"></result>
+        <result property="sex" column="sex"></result>
+        <result property="sno" column="sno"></result>
+        <result property="phone" column="phone"></result>
+        <result property="col_id" column="col_id"></result>
+        <result property="keyword" column="keyword"></result>
+        <result property="regTime" column="reg_time"></result>
+        <result property="endTime" column="end_time"></result>
+    </resultMap>
+    <resultMap id="BaseUser" type="com.example.app.entity.BaseUser">
+        <id property="id" column="id"></id>
+        <result property="username" column="username"></result>
+        <result property="password" column="password"></result>
+        <result property="regTime" column="sex"></result>
+        <result property="endTime" column="sno"></result>
+        <result property="phone" column="phone"></result>
+        <result property="keyword" column="keyword"></result>
+        <result property="regTime" column="reg_time"></result>
+        <result property="endTime" column="end_time"></result>
+    </resultMap>
+
     <insert id="registerCode" parameterType="com.example.app.util.SMS">
         insert into code (code.phone,code.code,code.time)
         values ('${phone}',${code.getKey()},NOW());
@@ -13,8 +38,8 @@
     <select id="hasCol" parameterType="java.lang.Integer" resultType="java.lang.Integer">
         select count(*) from where col_id = ${col_id}
     </select>
-    <select id="hasUser" resultType="java.lang.Integer" parameterType="com.example.app.entity.User">
-        select count(*) from user where
+    <select id="hasUser" resultType="java.lang.Integer" parameterType="com.example.app.entity.BaseUser">
+        select count(*) from user join user_detail on user.id = user_detail.id where
         <if test="username!=null">
             username='${username}' or
         </if>
@@ -26,8 +51,8 @@
         </if>
         1=2
     </select>
-    <select id="login" parameterType="com.example.app.entity.User" resultMap="loginUser">
-        SELECT id,username,password,sex,sno,phone,col_id,keyword,regtime,endtime FROM
+    <select id="loginBaseUser" parameterType="com.example.app.entity.BaseUser" resultMap="BaseUser">
+        SELECT * FROM
         user where
         <if test="username!=null">
             username='${username}' or
@@ -41,28 +66,19 @@
         1=2
     </select>
 
-
-    <resultMap id="loginUser" type="com.example.app.entity.User">
-        <id property="id" column="id"></id>
-        <result property="username" column="username"></result>
-        <result property="passwords" column="password"></result>
-        <result property="sex" column="sex"></result>
-        <result property="sno" column="sno"></result>
-        <result property="phone" column="phone"></result>
-        <result property="col_id" column="col_id"></result>
-        <result property="keyword" column="keyword"></result>
-        <result property="regtime" column="regtime"></result>
-        <result property="endtime" column="endtime"></result>
-    </resultMap>
-    <insert id="register" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.app.entity.User">
-        INSERT INTO user (username, password, sex, sno, phone, col_id, keyword, regtime)
-        VALUES ('${username}', '${password}', ${sex}, '${sno}', '${phone}', ${col_id}, '${keyword}', NOW())
+    <insert id="registerAppUser" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.app.entity.AppUser">
+        INSERT INTO user_detail (sex, sno, col_id,user_id)
+        VALUES ( ${sex}, '${sno}', '${col_id}',(select id from user where username = ${username}))
+    </insert>
+    <insert id="registerBaseUser" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.app.entity.BaseUser">
+        INSERT INTO user (username, password, type , phone, keyword, reg_time,end_time)
+        VALUES ('${username}', '${password}', ${type}, '${phone}', '${keyword}',  NOW(), NOW())
     </insert>
 
-    <insert id="insert_order" parameterType="com.example.app.entity.Order">
+    <insert id="insertOrder" parameterType="com.example.app.entity.Order">
         insert into
     </insert>
-    <insert id="insert_order_count" parameterType="com.example.app.entity.Order">
+    <insert id="insertOrderCount" parameterType="com.example.app.entity.Order">
         insert into
     </insert>
 </mapper>

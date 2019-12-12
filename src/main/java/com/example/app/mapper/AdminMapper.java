@@ -1,8 +1,7 @@
 package com.example.app.mapper;
 
-import com.example.app.entity.Admin;
+import com.example.app.entity.BaseUser;
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Created by IntelliJ IDEA.
@@ -13,5 +12,5 @@ import org.springframework.beans.factory.annotation.Autowired;
  **/
 @Mapper
 public interface AdminMapper {
-    public Admin login(Admin admin);
+    public BaseUser login(BaseUser admin);
 }
