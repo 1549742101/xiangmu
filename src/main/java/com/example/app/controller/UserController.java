@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -44,6 +45,10 @@ public class UserController {
     public String Register(@Valid @ModelAttribute("user") AppUser user, BindingResult bindingResult, Model model){
         model.addAttribute("cols",userService.allCollege());
         if (bindingResult.hasErrors()){
+            for (ObjectError er:bindingResult.getAllErrors()
+                 ) {
+                System.out.println(er.toString());
+            }
             return "register";
         }else {
             if (userService.registerAppUser(user)>0){

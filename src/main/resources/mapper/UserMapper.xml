@@ -51,7 +51,7 @@
         </if>
         1=2
     </select>
-    <select id="loginBaseUser" parameterType="com.example.app.entity.BaseUser" resultMap="BaseUser">
+    <select id="loginAppUser" parameterType="com.example.app.entity.AppUser" resultMap="BaseUser">
         SELECT * FROM
         user where
         <if test="username!=null">

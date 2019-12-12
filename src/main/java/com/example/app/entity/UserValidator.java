@@ -84,6 +84,7 @@ class UserByUserName implements ConstraintValidator<hasUserByUserName,String> {
     @Override
     public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) {
         user.setUsername(s);
+        System.out.println(userService.hasUser(user));
         return !userService.hasUser(user);
     }
 }
@@ -94,6 +95,7 @@ class UserBySno implements ConstraintValidator<hasUserBySno,Integer> {
     @Override
     public boolean isValid(Integer s, ConstraintValidatorContext constraintValidatorContext) {
         user.setSno(s);
+        System.out.println(s);
         return !userService.hasUser(user);
     }
 }
@@ -104,6 +106,7 @@ class UserByPhone implements ConstraintValidator<hasUserByPhone,String> {
     @Override
     public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) {
         user.setPhone(s);
+        System.out.println(s);
         return !userService.hasUser(user);
     }
 }
@@ -112,6 +115,7 @@ class Cols implements ConstraintValidator<hasCol,Integer> {
     private UserService userService;
     @Override
     public boolean isValid(Integer s, ConstraintValidatorContext constraintValidatorContext) {
+        System.out.println(s);
         return !userService.hasCol(s);
     }
 }
@@ -120,6 +124,7 @@ class Codes implements ConstraintValidator<registerCode,Integer> {
     private UserService userService;
     @Override
     public boolean isValid(Integer s, ConstraintValidatorContext constraintValidatorContext) {
+        System.out.println(s);
         return userService.getCode(s);
     }
 }

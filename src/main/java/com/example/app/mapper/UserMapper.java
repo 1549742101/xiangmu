@@ -39,10 +39,10 @@ public interface UserMapper {
      * 功能描述
      * @author xgl
      * @date 2019/12/12
-      * @param baseUser
+      * @param appUser
      * @return com.example.app.entity.BaseUser
      */
-    BaseUser loginBaseUser(BaseUser baseUser);
+    AppUser loginAppUser(AppUser appUser);
     /**
      * 功能描述
      * @author xgl

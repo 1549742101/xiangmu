@@ -35,7 +35,7 @@
                 <br th:if="!${#fields.hasErrors('sno')}">
                 <div class="input-group" th:class="${#fields.hasErrors('username')}?'has-error input-group':'input-group'">
                     <span class="input-group-addon">用&ensp;户&ensp;名</span>
-                    <input type="text" class="form-control username" name="username"  placeholder="请输入用户名，长度大于6位" th:field="*{username}">
+                    <input type="text" class="form-control username" name="username"  placeholder="请输入用户名，长度6-16位" th:field="*{username}">
                 </div>
                 <p class="text-center text-warning" th:if="${#fields.hasErrors('username')}" th:text="${#fields.errors('username')[0]}"></p>
                 <br th:if="!${#fields.hasErrors('username')}">
@@ -53,7 +53,7 @@
                 <br th:if="!${#fields.hasErrors('samePassword')}">
                 <div class="input-group" th:class="${#fields.hasErrors('col_id')}?'has-error input-group':'input-group'">
                     <span class="input-group-addon">学&ensp;&ensp;&ensp;&ensp;院</span>
-                    <select class="form-control college" name="college" th:field="*{col_id}">
+                    <select class="form-control college" name="col_id" th:field="*{col_id}">
                         <option value="0">请选择学院</option>
                         <option th:each="u : ${cols}" th:text="${u.name}" th:value="${u.id}"></option>
                     </select>
@@ -62,7 +62,7 @@
                 <br th:if="!${#fields.hasErrors('col_id')}">
                 <div class="input-group" th:class="${#fields.hasErrors('sex')}?'has-error input-group':'input-group'">
                     <span class="input-group-addon" th:field="*{sex}">性&ensp;&ensp;&ensp;&ensp;别</span>
-                    <select class="form-control college" name="college">
+                    <select class="form-control college" name="sex">
                         <option value="1">男</option>
                         <option value="0">女</option>
                     </select>

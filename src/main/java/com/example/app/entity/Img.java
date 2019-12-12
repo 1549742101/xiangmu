@@ -8,12 +8,14 @@ import lombok.Data;
  * Date: 2019/12/6
  * Time: 21:48
  * To change this template use File | Settings | File Templates.
- **/
+ *
+ * @author xgl
+ * */
 @Data
 public class Img {
     private int id;
     private String filename;
-    private String originalname;
+    private String originalName;
     private int user_id;
     private int type;
 }

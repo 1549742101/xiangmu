@@ -8,7 +8,9 @@ import lombok.Data;
  * Date: 2019/11/18
  * Time: 16:23
  * To change this template use File | Settings | File Templates.
- **/
+ *
+ * @author xgl
+ * */
 @Data
 public class College {
     private int id;

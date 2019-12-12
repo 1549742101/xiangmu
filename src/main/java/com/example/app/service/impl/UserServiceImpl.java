@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
         md5.setKey(key);
         if(md5.loginByPass(pass,baseUser.getPassword())){
             baseUser.setPassword("");
-            return baseUser;
+            return userMapper.loginBaseUser(baseUser);
         }else {
             return null;
         }

@@ -5,7 +5,7 @@
     <select id="getAllShop" resultType="com.example.app.entity.Shop">
         select 1;
     </select>
-    <select id="getShopType" resultType="com.example.app.entity.Shop_Type">
+    <select id="getShopType" resultType="com.example.app.entity.ShopType">
         select 1;
     </select>
     <select id="getAllShopByType" resultType="com.example.app.entity.Shop">

@@ -21,10 +21,10 @@ import java.util.Date;
 @Data
 public class BaseUser {
     private int id;
-    @Length(min = 5,max = 20,message = "账号名必须在5-18位之间")
+    @Length(min = 6,max = 16,message = "账号名必须在6-16位之间")
     @hasUserByUserName
     private String username;
-    @Length(min = 6,max = 20,message = "密码长度必须在6-20之间")
+    @Length(min = 6,max = 18,message = "密码长度必须在6-18之间")
     private String password;
     private String passwords;
     private long keyword;
