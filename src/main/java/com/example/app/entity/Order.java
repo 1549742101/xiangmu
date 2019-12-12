@@ -18,5 +18,5 @@ public class Order {
     private int user_id;//用户id
     private Date time;//订单时间
     private int state;//订单状态
-    private List<Order_Count> order;//详单
+    private List<OrderCount> order;//详单
 }

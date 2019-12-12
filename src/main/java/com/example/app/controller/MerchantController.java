@@ -29,7 +29,7 @@ public class MerchantController {
         model.addAttribute("emsg",errorMessage);
         return "login";
     }
-    @GetMapping("MCT/register")
+    @GetMapping("register")
     public String getRegister(Model model){
         BaseUser user = new BaseUser();
         model.addAttribute("user",user);

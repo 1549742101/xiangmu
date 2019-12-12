@@ -39,10 +39,10 @@ public interface UserService {
      * 功能描述 所有用户登录首页
      * @author xgl
      * @date 2019/12/11
-      * @param baseUser
+      * @param appUser
      * @return com.example.app.entity.AppUser
      */
-    public BaseUser login(BaseUser baseUser);
+    public AppUser login(AppUser appUser);
     /**
      * 功能描述 所有学院信息
      * @author xgl

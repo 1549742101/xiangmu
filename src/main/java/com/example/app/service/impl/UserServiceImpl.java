@@ -48,14 +48,14 @@ public class UserServiceImpl implements UserService {
         return userMapper.registerBaseUser(baseUser);
     }
     @Override
-    public BaseUser login(BaseUser baseUser) {
-        String pass = baseUser.getPassword();
-        long key = baseUser.getKeyword();
+    public AppUser login(AppUser appUser) {
+        String pass = appUser.getPassword();
+        long key = appUser.getKeyword();
         MD5 md5 = new MD5();
         md5.setKey(key);
-        if(md5.loginByPass(pass,baseUser.getPassword())){
-            baseUser.setPassword("");
-            return userMapper.loginBaseUser(baseUser);
+        if(md5.loginByPass(pass,appUser.getPassword())){
+            appUser.setPassword("");
+            return userMapper.loginAppUser(appUser);
         }else {
             return null;
         }

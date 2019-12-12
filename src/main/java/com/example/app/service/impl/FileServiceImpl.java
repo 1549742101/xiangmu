@@ -35,7 +35,7 @@ public class FileServiceImpl implements FileService {
     public String upload(MultipartFile file, BaseUser appUser, String pre) {
         String fileName = Long.toString(Calendar.getInstance().getTimeInMillis())+appUser.getId()+"."+pre;
         File targetFile = new File(uploadFolder,fileName);
-        String originalname = file.getOriginalFilename();
+        String originalName = file.getOriginalFilename();
         try {
             file.transferTo(targetFile);
         } catch (IOException e) {
@@ -46,7 +46,7 @@ public class FileServiceImpl implements FileService {
         int user_type = appUser.getClass().getName()=="Admin.class"?0:appUser.getClass().getName()=="User.class"?2:1;
         img.setUser_id(appUser.getId());
         img.setFilename(fileName);
-        img.setOriginalname(originalname);
+        img.setOriginalName(originalName);
         img.setUser_id(appUser.getId());
         img.setType(user_type);
         return fileMapper.upload(img)>0?fileName:null;

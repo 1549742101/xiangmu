@@ -52,7 +52,7 @@
                 <div>
                     <button class="btn btn-success btn-block" type="submit">登录</button>
                 </div>
-                <div class="text-center">
+                <div class="text-center" th:if='${uri[1]!=null||uri[1]!=""}'>
                     还没有账号!<a th:href="@{${uri[1]}}" href="/login.html" class="text-">注册</a>
                 </div>
                 <div class="text-center">

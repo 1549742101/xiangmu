@@ -24,16 +24,12 @@ public class AdminController {
         model.addAttribute("user",user);
         boolean [] error = {false,false,false};
         String[] errorMessage = {"","",""};
-        String[] url = {"/MCT/login1","/admin/register","/admin/forget"};
+        String[] url = {"/MCT/login1","/admin/forget"};
         model.addAttribute("error",error);
         model.addAttribute("uri",url);
         model.addAttribute("msg",errorMessage);
         return "login";
     }
 
-
-    public String register(Model model){
-        return "";
-    }
 }
 
