@@ -51,9 +51,9 @@
         </if>
         1=2
     </select>
-    <select id="loginAppUser" parameterType="com.example.app.entity.AppUser" resultMap="BaseUser">
+    <select id="loginAppUser" parameterType="com.example.app.entity.AppUser" resultMap="AppUser">
         SELECT * FROM
-        user where
+        user join user_detail on  where
         <if test="username!=null">
             username='${username}' or
         </if>

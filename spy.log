@@ -843,3 +843,7 @@
 1576152070588|32|statement|connection 0|select count(*) from user join user_detail on user.id = user_detail.id where                       username='123455' or                                       1=2|select count(*) from user join user_detail on user.id = user_detail.id where                       username='123455' or                                       1=2
 1576152070624|34|statement|connection 0|select count(*) from user join user_detail on user.id = user_detail.id where                       username='123455' or                                       1=2|select count(*) from user join user_detail on user.id = user_detail.id where                       username='123455' or                                       1=2
 1576152070648|22|statement|connection 0|select * from col|select * from col
+1576155973962|40|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576156047426|103|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576156047615|165|statement|connection 0|select * from col|select * from col
+1576157047047|45|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL

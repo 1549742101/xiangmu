@@ -80,7 +80,7 @@ public class UserController {
     }
 
     @RequestMapping(value = {"login1"},method = RequestMethod.POST)
-    public String login(BaseUser user, Model model){
+    public String login(AppUser user, Model model){
         boolean [] error = {false,false,false};
         String[] errorMessage = {"","",""};
         if (userService.hasUser(user)){
