@@ -17,7 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Date: 2019/11/18
  * Time: 8:55
  * To change this template use File | Settings | File Templates.
- **/
+ *
+ * @author xgl
+ * */
 @Controller
 @RequestMapping("/")
 public class TemplateController {

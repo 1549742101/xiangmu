@@ -13,7 +13,6 @@ body{
 	padding-right: 10px;
 }
 .logo{
-	
 	float: left;
 	text-align: center
 }
@@ -23,20 +22,24 @@ body{
 	background:#d65353;
 }
 .ul_menu>li{
+	display: inline-block;
 	min-width:30px;
-	float:left;
 	line-height: 40px;
 	text-align: center;
 	margin-left: 90px;
 }
 .ul_menu>li>a{
 	width: 100px;
+	font-weight: bold;
 	display: inline-block;
 	color: #fff;
 }
+.ul_menu>.active>a{
+	background:#aa0000;
+}
 .ul_menu>li>a:hover{
 	color: #fff;
-	background:#000;
+	background:#aa0000;
 }
 
 .form_content{
@@ -64,10 +67,16 @@ body{
 	transition: all 0.5s;
 	overflow: hidden;
 }
+.banner_ul>li{
+	display: none;
+}
+.banner_ul>.active{
+	display: block;
+}
 .banner_ul>li>img{
+	float: left;
 	width: 100%;
 	height: 560px;
-	float: left;
 }
 .banner_ol{
 	width: 100%;
@@ -78,11 +87,39 @@ body{
 	background: rgba(123,123,123,0.2);
 }
 .banner_ol>li{
+	display: none;
+}
+.banner_ol>.active{
+	display: block;
 	color: white;
-
 	font-weight: bold;
 	line-height: 40px;
 	width: 100%;
+}
+.banner_ol>.active>p{
+	display: inline-block;
+	width: 20%;
+	float: left;
+	margin-left: 20px;
+}
+.banner_on{
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+	display: inline-block;
+	width: 160px;
+}
+.banner_on>li{
+	width: 15px;
+	height: 15px;
+	margin-left: 10px;
+	display: inline-block;
+	border-radius: 90px;
+	background: white;
+}
+
+.banner_on>.active{
+	background: #d65353;
 }
 .message{
 	height: 320px;
@@ -100,8 +137,25 @@ body{
 	margin-top: 5px;
 }
 .act_ul>li{
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	margin-top: 5px;
+	line-height: 40px;
+	height: 40px;
+	font-size: 16px;
+	font-weight: bold;
 	text-align: start;
-	display: block;
+	color: #d65353;
+	border-bottom: 1px gray dashed;
+}
+.act_ul>li>p>a{
+	color: #d65353;
+}
+.act_ul>li>p{
+	width: 60%;
+	display: inline-block;
+	overflow: hidden;
 }
 .act_ul>li>span{
 	float: right;
@@ -119,10 +173,36 @@ body{
 	position: relative;
 }
 .shop_content>li{
+	background: url("../img/2.png");
 	width: 80%;
 	border:dashed 3px #676262;
 	margin: 40px auto;
 	min-height: 250px;
+}
+.shop_content>li>span>img{
+	float: left;
+	margin-left: 50px;
+	margin-top: 50px;
+	width: 150px;
+	height: 150px;
+}
+.shop_content>li>div{
+	margin-top: 20px;
+	height: 180px;
+	display: inline-block;
+	width: 60%;
+	float: right;
+}
+.shop_content>li>div>ul{
+	display: inline-block;
+	width: 50%;
+}
+.shop_content>li>div>span{
+	width: 45%;
+	float: right;
+}
+.shop_content>li>div>ul>li{
+	text-align: start;
 }
 .more_shop{
 	position: absolute;

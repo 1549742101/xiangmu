@@ -94,6 +94,8 @@ public class UserController {
             error[0]=true;
             errorMessage[0]="账号不存在";
         }
+        String[] url = {"/login1","/register","forget"};
+        model.addAttribute("uri",url);
         model.addAttribute("error",error);
         model.addAttribute("msg",errorMessage);
         return "login";

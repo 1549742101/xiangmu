@@ -50,6 +50,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public AppUser login(AppUser appUser) {
         String pass = appUser.getPassword();
+        appUser=userMapper.loginAppUser(appUser);
         long key = appUser.getKeyword();
         MD5 md5 = new MD5();
         md5.setKey(key);

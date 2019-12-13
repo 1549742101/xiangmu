@@ -26,7 +26,7 @@ public class IndexController {
     private static Logger log = LoggerFactory.getLogger(IndexController.class);
     @RequestMapping("index")
     public String index(@ModelAttribute("user") BaseUser user, Model model){
-        model.addAttribute(user);
+        model.addAttribute("user",user);
         return "app/index";
     }
 
