@@ -1,9 +1,9 @@
 // JavaScript Document
 (function () {
-    var banner_img=$(".banner_ul>li");
-    var banner_ol=$(".banner_ol>li");
-    var banner=$(".banner_on>li");
-    var index;
+    let banner_img=$(".banner_ul>li");
+    let banner_ol = $(".banner_ol>li");
+    let banner=$(".banner_on>li");
+    let index;
     banner.click(function () {
         index = banner.index(this);
         banner_ol.removeClass("active");

@@ -38,8 +38,8 @@
     <select id="hasCol" parameterType="java.lang.Integer" resultType="java.lang.Integer">
         select count(*) from where col_id = ${col_id}
     </select>
-    <select id="hasUser" resultType="java.lang.Integer" parameterType="com.example.app.entity.BaseUser">
-        select count(*) from user where
+    <select id="hasUser" resultType="java.lang.Integer" parameterType="com.example.app.entity.AppUser">
+        select count(*) from user left join user_detail on user.id=user_detail.user_id where
         <if test="username!=null">
             username='${username}' or
         </if>

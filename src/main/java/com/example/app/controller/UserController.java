@@ -1,7 +1,6 @@
 package com.example.app.controller;
 
 import com.example.app.entity.AppUser;
-import com.example.app.entity.BaseUser;
 import com.example.app.service.UserService;
 import com.example.app.util.SMS;
 import org.slf4j.Logger;
@@ -52,7 +51,7 @@ public class UserController {
             return "register";
         }else {
             if (userService.registerAppUser(user)>0){
-                return new IndexController().index(user,model);
+                return "forward:Reindex";
             }else {
                 return "register";
             }
@@ -80,7 +79,7 @@ public class UserController {
     }
 
     @RequestMapping(value = {"login1"},method = RequestMethod.POST)
-    public String login(AppUser user, Model model){
+    public String login(@ModelAttribute("user") AppUser user, Model model){
         boolean [] error = {false,false,false};
         String[] errorMessage = {"","",""};
         if (userService.hasUser(user)){
@@ -88,7 +87,7 @@ public class UserController {
                 error[1]=true;
                 errorMessage[1]="密码错误";
             }else {
-                return new IndexController().index(userService.login(user),model);
+                return "forward:Reindex";
             }
         }else {
             error[0]=true;

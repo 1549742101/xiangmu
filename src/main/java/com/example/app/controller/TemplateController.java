@@ -29,7 +29,7 @@ public class TemplateController {
      * 日志文件
      */
     private static Logger log = LoggerFactory.getLogger(TemplateController.class);
-    @GetMapping({"login","login.html"})
+    @GetMapping({"login","login.html","login1"})
     public String login(Model model){
         BaseUser user=new BaseUser();
         model.addAttribute("user",user);
