@@ -1069,3 +1069,77 @@
 1576238665074|17|statement|connection 0|select count(*) from user left join user_detail on user.id=user_detail.user_id where                                           phone='13272950115' or                   1=2|select count(*) from user left join user_detail on user.id=user_detail.user_id where                                           phone='13272950115' or                   1=2
 1576238665088|12|statement|connection 0|select count(*) from code where code.code = 123456;|select count(*) from code where code.code = 123456;
 1576238665111|17|statement|connection 0|select * from col|select * from col
+1576341971212|15|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576342041812|9|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576342041835|10|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576342182216|17|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576342184944|10|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576342223545|16|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576342229546|11|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576343192077|16|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576343198351|27|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576343236731|17|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576343243109|11|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576343272795|11|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576343282164|11|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576343337504|11|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576343371614|16|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576343378904|11|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576343714073|154|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576343727204|145|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576343792379|168|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576343792548|168|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576343837546|153|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576344194028|153|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576344591606|165|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576344591780|165|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576344659845|158|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576344660012|165|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576344745163|174|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576344753413|162|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576344885643|154|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576344885802|158|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576344907380|153|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576345021179|149|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576345021332|153|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576345039136|168|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576345191403|150|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576345191559|155|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576345208172|163|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576345223606|10|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576345432699|165|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576345432870|170|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576345500152|152|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576345500312|158|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576345959093|157|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576345959252|158|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576346084888|135|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576346085026|137|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576346159333|141|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576346159483|149|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576346223596|161|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576346223739|142|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576346225364|164|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576346226496|162|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576346227589|159|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576346228425|164|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576346229833|148|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576346231465|169|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576346232630|157|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576346234208|151|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576346276513|190|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576346305811|155|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576346403244|142|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576346403386|141|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576346523435|160|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576346523602|167|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576404271500|16|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1576404299188|26|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576404327394|10|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576404359713|13|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576404406632|10|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576404436831|14|statement|connection 0|select count(*) from user left join user_detail on user.id=user_detail.user_id where                       username='123456' or                                       1=2|select count(*) from user left join user_detail on user.id=user_detail.user_id where                       username='123456' or                                       1=2
+1576404436852|18|statement|connection 0|SELECT * FROM         user left join user_detail on user.id=user_detail.user_id  where                       username='123456' or                                       1=2|SELECT * FROM         user left join user_detail on user.id=user_detail.user_id  where                       username='123456' or                                       1=2
+1576404436894|26|statement|connection 0|SELECT * FROM         user left join user_detail on user.id=user_detail.user_id  where                       username='123456' or                                 sno=123456 or                                 phone='13272950110' or                   1=2|SELECT * FROM         user left join user_detail on user.id=user_detail.user_id  where                       username='123456' or                                 sno=123456 or                                 phone='13272950110' or                   1=2
+1576404436970|12|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;
+1576404439698|10|statement|connection 0|select * from index_banner as i join img on img_id = img.id where i.type=1;|select * from index_banner as i join img on img_id = img.id where i.type=1;

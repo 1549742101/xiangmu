@@ -1,6 +1,7 @@
 package com.example.app.mapper;
 
 import com.example.app.entity.Dish;
+import com.example.app.entity.IndexBanner;
 import com.example.app.entity.Shop;
 import com.example.app.entity.ShopType;
 import org.apache.ibatis.annotations.Mapper;
@@ -23,5 +24,6 @@ public interface ShopMapper {
     List<Shop> getAllShopByType(ShopType shopType);
     List<Dish> getAllDish();
     List<Dish> getAllDishByShop();
+    List<IndexBanner> getAllBanner();
 }
 

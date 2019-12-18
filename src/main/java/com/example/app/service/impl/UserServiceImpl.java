@@ -1,6 +1,7 @@
 package com.example.app.service.impl;
 
 import com.example.app.entity.*;
+import com.example.app.mapper.ShopMapper;
 import com.example.app.mapper.UserMapper;
 import com.example.app.service.UserService;
 import com.example.app.util.MD5;
@@ -21,6 +22,8 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private ShopMapper shopMapper;
     /**
      * 功能描述
      * @author xgl
@@ -91,6 +94,11 @@ public class UserServiceImpl implements UserService {
     public boolean Order(Order order) {
 
         return false;
+    }
+
+    @Override
+    public List<IndexBanner> getAllBanner() {
+        return shopMapper.getAllBanner();
     }
 
 }

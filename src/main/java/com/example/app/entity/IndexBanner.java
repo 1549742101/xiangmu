@@ -2,6 +2,8 @@ package com.example.app.entity;
 
 import lombok.Data;
 
+import java.util.Date;
+
 /**
  * @Description
  * @Author xgl
@@ -12,8 +14,11 @@ import lombok.Data;
 @Data
 public class IndexBanner {
     int id;
-    int img_id;
+    /**
+     默认为0，开关0/1
+     */
     int type;
-    String uri;
     String text;
+    Img img;
+    Date date;
 }

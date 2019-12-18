@@ -1,10 +1,7 @@
 package com.example.app.service;
 
 
-import com.example.app.entity.AppUser;
-import com.example.app.entity.BaseUser;
-import com.example.app.entity.College;
-import com.example.app.entity.Order;
+import com.example.app.entity.*;
 import com.example.app.util.SMS;
 
 import java.util.List;
@@ -91,4 +88,12 @@ public interface UserService {
      * @return boolean
      */
     public boolean Order(Order order);
+    /**
+     * 功能描述
+     * @author xgl
+     * @date 2019/12/15
+      * @param
+     * @return com.example.app.entity.IndexBanner
+     */
+    public List<IndexBanner> getAllBanner();
 }

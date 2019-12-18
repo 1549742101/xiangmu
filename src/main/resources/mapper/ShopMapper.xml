@@ -17,4 +17,17 @@
     <select id="getAllDishByShop" resultType="com.example.app.entity.Dish">
         select 1;
     </select>
+    <select id="getAllBanner" resultMap="IndexBanner">
+        select * from index_banner as i join img on img_id = img.id where i.type=1;
+    </select>
+    <resultMap id="IndexBanner" type="com.example.app.entity.IndexBanner">
+        <id column="id" property="id"></id>
+        <result property="type" column="type"></result>
+        <result property="date" column="time"></result>
+        <result property="text" column="text"></result>
+        <association property="img" javaType="com.example.app.entity.Img" column="img">
+            <result property="filename" column="filename"></result>
+            <result property="originalName" column="originalName"></result>
+        </association>
+    </resultMap>
 </mapper>

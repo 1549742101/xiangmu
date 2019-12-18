@@ -121,7 +121,7 @@ body{
 .banner_on>.active{
 	background: #d65353;
 }
-@media all and (min-width: 768px){
+@media all and (max-device-height: 768px){
 	.banner_ul,.banner_ul>li>img{
 		height: 500px;
 	}
